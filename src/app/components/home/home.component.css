@@ -5,3 +5,12 @@ img.giphy-logo {
 h1.brand {
     color: white;
 }
+
+.align {
+    text-align: center;
+}
+
+.max-width {
+    max-width: 650px;
+    max-height: 525px;
+}

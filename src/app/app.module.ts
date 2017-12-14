@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RandomGifService } from './services/random-gif.service';
+import { GifByIdService } from './services/gif-by-id.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RandomGifService } from './services/random-gif.service';
     HttpModule
   ],
   providers: [
-    RandomGifService
+    RandomGifService,
+    GifByIdService
   ],
   bootstrap: [AppComponent]
 })
