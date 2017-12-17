@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
 
   getCurrentDay(){
     let date = new Date();
-    let currentDayIndex:number = date.getDay() - 1;
-    const days:string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    let currentDayIndex:number = date.getDay();
+    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     this.currentDay = days[currentDayIndex];
     return this.currentDay;
   }
