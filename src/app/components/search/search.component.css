@@ -1,0 +1,28 @@
+.gif {
+    margin-right: 20px;
+    margin-left: 18px;
+    padding-bottom: 25px;
+}
+
+.search-button {
+    cursor: pointer;
+}
+
+.align-center {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-header {
+    margin-top: 10px;
+}
+
+.search-string {
+    margin-bottom: 40px;
+    color: #2AA198;
+}
+
+.search-bad-result {
+    color: #2AA198;
+}

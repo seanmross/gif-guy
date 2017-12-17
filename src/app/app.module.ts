@@ -10,7 +10,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RandomGifService } from './services/random-gif.service';
-import { GifByIdService } from './services/gif-by-id.service';
+import { SearchGifsService } from './services/search-gifs.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { GifByIdService } from './services/gif-by-id.service';
   ],
   providers: [
     RandomGifService,
-    GifByIdService
+    SearchGifsService
   ],
   bootstrap: [AppComponent]
 })

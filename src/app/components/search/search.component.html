@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col col-lg-12">
-            <div class="jumbotron">
 
+            <!-- Search -->
+            <div class="jumbotron">
+                <h1>Search</h1>
                 <form>
                     <div class="input-group">
                         <input
@@ -12,15 +14,44 @@
                             (keyup.enter)="searchGifs()"
                             class="form-control"
                             placeholder="Search gifs..."
+                            autocomplete="off"
                         />
-                        <div class="input-group-addon">
+                        <div class="input-group-addon search-button" (click)="searchGifs()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </div>
                     </div>    
                 </form>
-
-
+                <div class="search-header">
+                    <p class="lead">Search all GIPHY GIFs for a word or phrase.</p>
+                </div>
             </div>
+
+            <!-- GIFs -->
+            <div *ngIf="gifs && gifs.length > 0">            
+                <div class="jumbotron">
+                    <h1 class="search-string">{{ searchResult }}</h1>            
+                    <div class="row">
+                        <div *ngFor="let gif of gifs">
+                            <div class="col col-lg-3">
+                                <img src="{{ gif.images.fixed_width.url }}" class="rounded gif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bad Result -->
+            <div *ngIf="gifs && gifs.length == 0">
+                <h1 class="search-bad-result">Sorry, no results found for "{{ searchResult }}"</h1>
+            </div>
+
+            <!-- Logo -->
+            <div *ngIf="!gifs">
+                <div class="align-center">
+                    <img src="/assets/gh-logo.png" width="100" height="100" alt="">
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

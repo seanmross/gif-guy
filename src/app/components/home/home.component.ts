@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomGifService } from './../../services/random-gif.service';
 import { Observable } from 'rxjs/Rx';
-import { Gif } from './../../models/gif.interface';
+import { RandomGif } from '../../models/gif.interface';
+
 
 @Component({
   selector: 'home',
@@ -9,23 +10,28 @@ import { Gif } from './../../models/gif.interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  randomGif:Observable<Gif>;
-  
-  date = new Date();
-  current_day_index:number = this.date.getDay()-1;
-  days:string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  current_day:string = this.days[this.current_day_index];
+  public gif:RandomGif;
+  public currentDay:string;
 
-  constructor(
-    private randomGifService:RandomGifService
-  ){}
+  constructor( private randomGifService:RandomGifService ){}
   
   ngOnInit(){
     this.getRandomGif();
   }
+
+  getCurrentDay(){
+    let date = new Date();
+    let currentDayIndex:number = date.getDay() - 1;
+    const days:string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    this.currentDay = days[currentDayIndex];
+    return this.currentDay;
+  }
   
   getRandomGif(){
-    this.randomGif = this.randomGifService.getRandomGif(this.current_day);
+    this.randomGifService.getRandomGif(this.getCurrentDay())
+      .subscribe((result) => {
+        this.gif = result;
+      })
   }
 
 }
