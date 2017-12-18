@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col col-lg-12">
 
-            <!-- Search -->
+            <!-- Search Bar -->
             <div class="jumbotron">
                 <h1>Search</h1>
                 <form>
@@ -14,7 +14,6 @@
                             (keyup.enter)="searchGifs()"
                             class="form-control"
                             placeholder="Search gifs..."
-                            autocomplete="off"
                         />
                         <div class="input-group-addon search-button" (click)="searchGifs()">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -26,10 +25,26 @@
                 </div>
             </div>
 
-            <!-- GIFs -->
+            <!-- GIF results -->
             <div *ngIf="gifs && gifs.length > 0">            
                 <div class="jumbotron">
-                    <h1 class="search-string">{{ searchResult }}</h1>            
+                    <!-- Search string & total results data -->
+                    <h1 class="search-result">{{ searchResult }}</h1>
+                    <div *ngIf="paginationData" class="pagination-data">
+                        <p class="lead">{{ paginationData.total_count }} GIFs found.</p>            
+                    </div>
+                    <!-- Pagination data -->
+                    <div class="pagination">
+                        <ngb-pagination
+                            [collectionSize]="paginationData.total_count"
+                            [(page)]="currentPage"
+                            [pageSize]="limit"
+                            [maxSize]="5" [rotate]="true"
+                            (pageChange)="searchGifs()"
+                            [boundaryLinks]="true">
+                        </ngb-pagination>
+                    </div>
+                    <!-- Display GIFs -->
                     <div class="row">
                         <div *ngFor="let gif of gifs">
                             <div class="col col-lg-3">
@@ -37,6 +52,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 

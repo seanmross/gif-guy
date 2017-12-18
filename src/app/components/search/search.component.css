@@ -18,11 +18,19 @@
     margin-top: 10px;
 }
 
-.search-string {
-    margin-bottom: 40px;
+.search-result {
     color: #2AA198;
 }
 
 .search-bad-result {
     color: #2AA198;
+}
+
+.pagination {
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.pagination-data {
+    margin-bottom: 20px;
 }

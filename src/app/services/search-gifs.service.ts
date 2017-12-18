@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Gif } from './../models/gif.interface';
+//import { Gif } from './../models/gif.interface';
 import 'rxjs/add/operator/map';
 
 /*
@@ -19,14 +19,14 @@ export class SearchGifsService {
 
     constructor(private http:Http){}
     
-    searchGifs(searchStr:string):Observable<Gif[]>{
+    searchGifs(searchStr:string, page:number):Observable<any>{
         if (searchStr.includes(' ')) {
             searchStr = searchStr.replace(/ /g, '+');
         }
-        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&limit=24&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
+        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&offset=${page}&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
         return this.http
                 .get(this.searchUrl)
-                .map((response: Response) => <Gif[]>response.json().data);
+                .map((response: Response) => response.json());
     }
 
 }
