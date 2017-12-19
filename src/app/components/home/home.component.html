@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
 
+    <!-- Brand tile -->
     <div class="col col-lg-4">
       <div class="jumbotron dark">
         <h1 class="navbar-title-custom-1">
@@ -24,13 +25,14 @@
       </div>      
     </div>
 
+    <!-- Welcome tile -->
     <div class="col col-lg-8">
       <div class="jumbotron">
         <div class="align">
           <h1>Happy {{ currentDay }}, username.</h1>
           <br>
           <div *ngIf="gif">
-            <img class="max-width" src="{{ gif.image_original_url }}" alt="">
+            <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
           </div>
         </div>
       </div>

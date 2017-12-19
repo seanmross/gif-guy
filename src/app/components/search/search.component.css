@@ -1,7 +1,8 @@
 .gif {
     margin-right: 20px;
     margin-left: 18px;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-radius: 0.25rem;
 }
 
 .search-button {
@@ -25,15 +26,20 @@
 }
 
 .search-bad-result {
-    color: #007bff;
+    color: #20c997;
     font-weight: bolder;
 }
 
-.pagination-data {
-    margin-bottom: 20px;
+.pagination-bar {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.pagination-bar {
-text-align: center;
-    margin-bottom: 30px;
+.small-padding {
+    padding: 2rem 2rem;
+}
+
+.dropdown-text {
+    padding-right: 0.2rem;
+    font-size: 90%;
 }

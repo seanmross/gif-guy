@@ -19,6 +19,10 @@ p {
     max-height: 525px;
 }
 
+.gif {
+    border-radius: 0.25rem;
+}
+
 .navbar-title-custom-1 {
     text-align: center;
     color: white;

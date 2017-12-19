@@ -19,11 +19,11 @@ export class SearchGifsService {
 
     constructor(private http:Http){}
     
-    searchGifs(searchStr:string, page:number):Observable<any>{
+    searchGifs(searchStr:string, page:number, perPage:number):Observable<any>{
         if (searchStr.includes(' ')) {
             searchStr = searchStr.replace(/ /g, '+');
         }
-        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&offset=${page}&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
+        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&offset=${page}&limit=${perPage}&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
         return this.http
                 .get(this.searchUrl)
                 .map((response: Response) => response.json());
