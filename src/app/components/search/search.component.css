@@ -12,6 +12,7 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin: auto auto;
 }
 
 .search-header {
@@ -19,18 +20,20 @@
 }
 
 .search-result {
-    color: #2AA198;
+    color: #20c997;
+    font-weight: bolder;
 }
 
 .search-bad-result {
-    color: #2AA198;
-}
-
-.pagination {
-    align-content: center;
-    margin-bottom: 20px;
+    color: #007bff;
+    font-weight: bolder;
 }
 
 .pagination-data {
     margin-bottom: 20px;
+}
+
+.pagination-bar {
+text-align: center;
+    margin-bottom: 30px;
 }

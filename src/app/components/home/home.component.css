@@ -2,8 +2,12 @@ img.giphy-logo {
     width: 232px;
 }
 
-h1.brand {
+p {
     color: white;
+}
+
+.dark {
+    background-color: #343a40;
 }
 
 .align {
@@ -13,4 +17,30 @@ h1.brand {
 .max-width {
     max-width: 650px;
     max-height: 525px;
+}
+
+.navbar-title-custom-1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-size: 2rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar-title-custom-2 {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    margin-left: -0.3rem;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    line-height: inherit;
+    white-space: nowrap;
 }
