@@ -1,28 +1,30 @@
 img.giphy-logo {
     width: 232px;
 }
-
 p {
     color: white;
 }
-
 .dark {
     background-color: #343a40;
 }
-
 .align {
     text-align: center;
 }
-
 .max-width {
     max-width: 650px;
     max-height: 525px;
 }
-
 .gif {
     border-radius: 0.25rem;
 }
-
+hr {
+    border-color:white;
+    width:75%;
+}
+.giphy-credit {
+    font-size:80%;
+    color:white;
+}
 .navbar-title-custom-1 {
     text-align: center;
     color: white;
@@ -34,7 +36,6 @@ p {
     line-height: inherit;
     white-space: nowrap;
 }
-
 .navbar-title-custom-2 {
     text-align: center;
     color: white;
