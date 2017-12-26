@@ -10,13 +10,21 @@
         </div>
         <!-- Navbar right -->
         <div class="nav">
-            <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog()"> Sign in </a>
-            <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')"> Sign up </a>
-            <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
-            <a class="nav-item nav-link nav-custom" routerLink=""> Sign out </a>
+            <div *ngIf="!tokenAuthService.userSignedIn()">
+                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog()">Sign in</a>
+            </div>
+            <div *ngIf="!tokenAuthService.userSignedIn()">
+                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
+            </div>
+            <div *ngIf="tokenAuthService.userSignedIn()">
+                <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
+            </div>
+            <div *ngIf="tokenAuthService.userSignedIn()">
+                <a class="nav-item nav-link nav-custom"> Sign out </a>
+            </div>
         </div>
     </div>
 </nav>
 <br>
-<app-auth-dialog #authDialog></app-auth-dialog>
 <router-outlet></router-outlet>
+<app-auth-dialog #authDialog></app-auth-dialog>

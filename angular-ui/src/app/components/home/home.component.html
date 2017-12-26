@@ -34,10 +34,10 @@
           <br><br><br>
           <div class="lead" style="font-size:120%;color:white">
             <span>
-              <a class="btn btn-primary btn-custom">Sign In</a>
+              <a class="btn btn-primary btn-custom" (click)="presentAuthDialog()">Sign in</a>
             </span> or
             <span>
-              <a class="btn btn-primary btn-custom">Sign Up</a>
+              <a class="btn btn-primary btn-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
             </span> to start saving, sharing, or downloading your favorite GIFs.
           </div>
         </div>
@@ -61,3 +61,4 @@
 
 </div>
 
+<app-auth-dialog #authDialog></app-auth-dialog>

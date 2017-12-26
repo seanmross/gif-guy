@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RandomGifService } from './../../services/random-gif.service';
 import { Observable } from 'rxjs/Rx';
 import { RandomGif } from '../../models/gif.interface';
 import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../../../environments/environment';
 import { MaterializeAction } from "angular2-materialize";
+import { AuthDialogComponent } from '../../auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'home',
@@ -14,6 +15,8 @@ import { MaterializeAction } from "angular2-materialize";
 export class HomeComponent implements OnInit {
   public gif:RandomGif;
   public currentDay:string;
+  
+  @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
   constructor( 
     private randomGifService:RandomGifService,
@@ -37,6 +40,10 @@ export class HomeComponent implements OnInit {
       .subscribe((result) => {
         this.gif = result;
       })
+  }
+
+  presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
+    this.authDialog.openDialog(mode);
   }
 
 }
