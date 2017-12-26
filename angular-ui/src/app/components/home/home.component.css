@@ -49,3 +49,6 @@ hr {
     line-height: inherit;
     white-space: nowrap;
 }
+.btn-custom:hover {
+    cursor: pointer !important;
+}

@@ -1,17 +1,22 @@
-<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container">
         <a class="navbar-title-custom-1" routerLink="">Gif<span class="navbar-title-custom-2">hub</span></a>
-        <div class="collapse navbar-collapse" id="navbarLeft">
-            <div class="nav nav-tabs">
-                <a class="nav-item nav-link" routerLink="search" routerLinkActive="active">Search</a>
-                <a class="nav-item nav-link" routerLink="favorites" routerLinkActive="active">Favorites</a>
+        <!-- Navbar left -->
+        <div class="collapse navbar-collapse">
+            <div class="nav">
+                <a class="nav-item nav-link nav-custom" routerLink="search" routerLinkActive="active">Search</a>
+                <a class="nav-item nav-link nav-custom" routerLink="favorites" routerLinkActive="active">Favorites</a>
             </div>
         </div>
-        <div class="nav nav-tabs" id="navbarRight">
-            <a class="nav-item nav-link" routerLink="">username</a>
-            <a class="nav-item nav-link" routerLink="">Sign Out</a>
+        <!-- Navbar right -->
+        <div class="nav">
+            <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog()"> Sign in </a>
+            <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')"> Sign up </a>
+            <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
+            <a class="nav-item nav-link nav-custom" routerLink=""> Sign out </a>
         </div>
     </div>
 </nav>
 <br>
+<app-auth-dialog #authDialog></app-auth-dialog>
 <router-outlet></router-outlet>

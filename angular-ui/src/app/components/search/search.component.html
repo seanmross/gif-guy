@@ -4,7 +4,7 @@
 
             <!-- Search bar tile -->
             <div class="jumbotron small-padding">
-                <h1>Search</h1>
+                <h2>Search</h2>
                 <form>
                     <div class="input-group">
                         <input
@@ -14,10 +14,8 @@
                             (keyup.enter)="searchGifs()"
                             class="form-control"
                             placeholder="Search gifs..."
+                            autocomplete="off"
                         />
-                        <div class="input-group-addon search-button" (click)="searchGifs()">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
                     </div>    
                 </form>
                 <div class="search-header">
@@ -29,9 +27,9 @@
             <div *ngIf="gifs && gifs.length > 0">            
                 <div class="jumbotron small-padding">
                     <!-- Search string & total results data -->
-                    <h1 class="search-result">{{ searchResult }}</h1>
+                    <h2 class="search-result">{{ searchResult }}</h2>
                     <div *ngIf="paginationData">
-                        <p class="lead">{{ paginationData.total_count }} GIFs found.</p>            
+                        <p class="lead">{{ paginationData.total_count | number }} GIFs found.</p>            
                     </div>
                     <!-- Pagination -->
                     <div class="row">
@@ -76,7 +74,7 @@
             <!-- Bad Result -->
             <div *ngIf="gifs && gifs.length == 0">
                 <div class="jumbotron small-padding">
-                    <h1 class="search-result">{{ searchResult }}</h1>
+                    <h2 class="search-result">{{ searchResult }}</h2>
                     <p class="lead">Sorry, no GIFs found.</p>
                 </div>
                 

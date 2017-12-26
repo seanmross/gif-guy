@@ -466,3 +466,166 @@ Unpermitted parameter: :session
 Completed 200 OK in 228ms (Views: 0.2ms | ActiveRecord: 7.9ms)
 
 
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-22 13:24:50 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"user@example.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'user@example.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"expiry\":1515176690}}"], ["updated_at", "2017-12-22 18:24:50.728469"], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 3], ["current_sign_in_at", "2017-12-22 18:24:50.734854"], ["last_sign_in_at", "2017-12-22 18:16:54.467398"], ["updated_at", "2017-12-22 18:24:50.736005"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"}}"], ["updated_at", "2017-12-22 18:24:50.809519"], ["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 265ms (Views: 0.3ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-22 21:56:01 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"user@example.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'user@example.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"},\"N7nnaP5x1MeDjJcZe-A-bQ\":{\"token\":\"$2a$10$eEDGRzLo.C4azXRoVfpz.Od.IMhazmktCY9j2xxlwcQjC/4s3PNzK\",\"expiry\":1515207362}}"], ["updated_at", "2017-12-23 02:56:02.269984"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 4], ["current_sign_in_at", "2017-12-23 02:56:02.275866"], ["last_sign_in_at", "2017-12-22 18:24:50.734854"], ["updated_at", "2017-12-23 02:56:02.276500"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"},\"N7nnaP5x1MeDjJcZe-A-bQ\":{\"token\":\"$2a$10$wApgYors7AA7H2dBjyc44eH1YLEAUowm9T7dTMxMrskQamBIaZEay\",\"expiry\":1515207362,\"last_token\":\"$2a$10$eEDGRzLo.C4azXRoVfpz.Od.IMhazmktCY9j2xxlwcQjC/4s3PNzK\",\"updated_at\":\"2017-12-22T21:56:02.352-05:00\"}}"], ["updated_at", "2017-12-23 02:56:02.352992"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 267ms (Views: 0.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-22 22:57:42 -0500
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/validate_token" for 127.0.0.1 at 2017-12-22 22:57:42 -0500
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"user@example.com", "password"=>"[FILTERED]"}}
+  Parameters: {"token_validation"=>{}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'user@example.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"},\"N7nnaP5x1MeDjJcZe-A-bQ\":{\"token\":\"$2a$10$wApgYors7AA7H2dBjyc44eH1YLEAUowm9T7dTMxMrskQamBIaZEay\",\"expiry\":1515207362,\"last_token\":\"$2a$10$eEDGRzLo.C4azXRoVfpz.Od.IMhazmktCY9j2xxlwcQjC/4s3PNzK\",\"updated_at\":\"2017-12-22T21:56:02.352-05:00\"},\"3OpNmA3sorVKyGj_5riOHw\":{\"token\":\"$2a$10$Z1H8lg2eLML5thwt7OSpf.3z8gyzDmRbsCpQ5TKmlVT7CxTbHp/Ui\",\"expiry\":1515211062}}"], ["updated_at", "2017-12-23 03:57:42.506490"], ["id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (67.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"},\"N7nnaP5x1MeDjJcZe-A-bQ\":{\"token\":\"$2a$10$Ui1M1qAvNtxz91AH/1ISzumJmoN/c4VYyp7WaXujg0Qt3SpWFUima\",\"expiry\":1515211062,\"last_token\":\"$2a$10$wApgYors7AA7H2dBjyc44eH1YLEAUowm9T7dTMxMrskQamBIaZEay\",\"updated_at\":\"2017-12-22T22:57:42.660-05:00\"},\"3OpNmA3sorVKyGj_5riOHw\":{\"token\":\"$2a$10$Z1H8lg2eLML5thwt7OSpf.3z8gyzDmRbsCpQ5TKmlVT7CxTbHp/Ui\",\"expiry\":1515211062}}"], ["updated_at", "2017-12-23 03:57:42.662548"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (81.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 5], ["current_sign_in_at", "2017-12-23 03:57:42.582608"], ["last_sign_in_at", "2017-12-23 02:56:02.275866"], ["updated_at", "2017-12-23 03:57:42.587001"], ["id", 1]]
+Completed 200 OK in 353ms (Views: 0.3ms | ActiveRecord: 46.1ms)
+
+
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"-sdqZA2_-fPXofxzu2jbMw\":{\"token\":\"$2a$10$fdtmNa4gA9tT5dgJMZMOC.AF/jn6RAIKY6kb2CViNfcBrTfpJZ262\",\"expiry\":1515176022,\"last_token\":\"$2a$10$NZg0RuWFcgM.mMccFjUkXekpxAaPEFoBLZ.z/3lMYBUisdJgqk95O\",\"updated_at\":\"2017-12-22T13:13:42.919-05:00\"},\"4elcdrHsEeR71Mx-TJXqdQ\":{\"token\":\"$2a$10$4Jy.T/2GeHgPeeilP6wdRO4WvYTvUp6zn5kBr0GNrqNPYYr0ibbju\",\"expiry\":1515176214,\"last_token\":\"$2a$10$AWZdU/0XcsV4jfLrP1pp4uvFUbGe.o/lYv/ypni6aX76ahyApGqdC\",\"updated_at\":\"2017-12-22T13:16:54.537-05:00\"},\"Jrol8GCVeoXA0hjes69Ifw\":{\"token\":\"$2a$10$SjZwrKPbrGXljlls/UA4nuCfPDCX0YuxBzNs/5tTxRMznUKZvoH6y\",\"expiry\":1515176690,\"last_token\":\"$2a$10$QvzGjJbIsADSKtHKfl9Lw.fVzYDE7bR3vAol5zao2i4TFPxWeQNEq\",\"updated_at\":\"2017-12-22T13:24:50.808-05:00\"},\"N7nnaP5x1MeDjJcZe-A-bQ\":{\"token\":\"$2a$10$Ui1M1qAvNtxz91AH/1ISzumJmoN/c4VYyp7WaXujg0Qt3SpWFUima\",\"expiry\":1515211062,\"last_token\":\"$2a$10$wApgYors7AA7H2dBjyc44eH1YLEAUowm9T7dTMxMrskQamBIaZEay\",\"updated_at\":\"2017-12-22T22:57:42.660-05:00\"},\"3OpNmA3sorVKyGj_5riOHw\":{\"token\":\"$2a$10$/2GmWcxE8GJax51pvDvNxesJ55iBHmJLjiO4U3k2t6LqwM5BRgviy\",\"expiry\":1515211062,\"last_token\":\"$2a$10$Z1H8lg2eLML5thwt7OSpf.3z8gyzDmRbsCpQ5TKmlVT7CxTbHp/Ui\",\"updated_at\":\"2017-12-22T22:57:42.756-05:00\"}}"], ["updated_at", "2017-12-23 03:57:42.757278"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 449ms (Views: 0.3ms | ActiveRecord: 166.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-12-22 23:12:11 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as HTML
+  Parameters: {"email"=>"user2@example.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "user2@example.com"]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["uid", "user2@example.com"], ["encrypted_password", "$2a$10$U/bntsDYftQQVAVkkHTeJ.FNp6vBMWUWk3W5QOCdLOF.A5oMoWSke"], ["email", "user2@example.com"], ["tokens", "{}"], ["created_at", "2017-12-23 04:12:11.410695"], ["updated_at", "2017-12-23 04:12:11.410695"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"EOQokjPh9_2uYPUkQXePCQ\":{\"token\":\"$2a$10$BmDbFY0TmZq86YTLjt.wCO76.ogO2jgZMJOQeZCq6hiX1W20s0Ly.\",\"expiry\":1515211931}}"], ["updated_at", "2017-12-23 04:12:11.484002"], ["id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"EOQokjPh9_2uYPUkQXePCQ\":{\"token\":\"$2a$10$MSzyKcDlXUkY7qX618qUPejVrwPEpYt0PPn8P2b/qucTgBjVc8.6.\",\"expiry\":1515211931,\"last_token\":\"$2a$10$BmDbFY0TmZq86YTLjt.wCO76.ogO2jgZMJOQeZCq6hiX1W20s0Ly.\",\"updated_at\":\"2017-12-22T23:12:11.558-05:00\"}}"], ["updated_at", "2017-12-23 04:12:11.559690"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 301ms (Views: 0.4ms | ActiveRecord: 15.1ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (3.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sross@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "sross@gmail.com"]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "nickname", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "sross@gmail.com"], ["encrypted_password", "$2a$10$n7n8HiqtoJOiR/ncQjYj4uHYzXextTYqiGJk3cQv0a6BupRqAQ3/S"], ["name", "sean"], ["nickname", "scotty"], ["email", "sross@gmail.com"], ["tokens", "{}"], ["created_at", "2017-12-25 21:12:16.448647"], ["updated_at", "2017-12-25 21:12:16.448647"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sross@gmail.com"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sross@gmail.com"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sross@gmail.com"], ["LIMIT", 11]]
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-25 16:13:01 -0500
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"sross@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"sross@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'sross@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"OPrGlLeM8eB2Na493qpsnA\":{\"token\":\"$2a$10$XhQ2xpS35t7ThLalFnH1.eFC.QBTK.wTqx.N4aakTWlaexpGgwrOe\",\"expiry\":1515445982}}"], ["updated_at", "2017-12-25 21:13:02.053377"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-12-25 21:13:02.059502"], ["last_sign_in_at", "2017-12-25 21:13:02.059502"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-12-25 21:13:02.060164"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"OPrGlLeM8eB2Na493qpsnA\":{\"token\":\"$2a$10$pTX9.dOVLHIf.mI8nqN9POCzdh9jPt7WzxpJabqB3.A/mXFIyAuhi\",\"expiry\":1515445982,\"last_token\":\"$2a$10$XhQ2xpS35t7ThLalFnH1.eFC.QBTK.wTqx.N4aakTWlaexpGgwrOe\",\"updated_at\":\"2017-12-25T16:13:02.139-05:00\"}}"], ["updated_at", "2017-12-25 21:13:02.140316"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 282ms (Views: 0.2ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-25 16:13:08 -0500
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"sross@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"sross@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'sross@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+Completed 401 Unauthorized in 102ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-12-25 16:13:15 -0500
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"sross@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"sross@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'sross@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"OPrGlLeM8eB2Na493qpsnA\":{\"token\":\"$2a$10$pTX9.dOVLHIf.mI8nqN9POCzdh9jPt7WzxpJabqB3.A/mXFIyAuhi\",\"expiry\":1515445982,\"last_token\":\"$2a$10$XhQ2xpS35t7ThLalFnH1.eFC.QBTK.wTqx.N4aakTWlaexpGgwrOe\",\"updated_at\":\"2017-12-25T16:13:02.139-05:00\"},\"jPpnnAH22MVSwcRpccW3jA\":{\"token\":\"$2a$10$mNXeclNxuuWx/t7jvE9Ymuks5kGHQHU/8tjZRIGHJf/tWKlFnpLXy\",\"expiry\":1515445995}}"], ["updated_at", "2017-12-25 21:13:15.577601"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 2], ["current_sign_in_at", "2017-12-25 21:13:15.582034"], ["updated_at", "2017-12-25 21:13:15.582781"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"OPrGlLeM8eB2Na493qpsnA\":{\"token\":\"$2a$10$pTX9.dOVLHIf.mI8nqN9POCzdh9jPt7WzxpJabqB3.A/mXFIyAuhi\",\"expiry\":1515445982,\"last_token\":\"$2a$10$XhQ2xpS35t7ThLalFnH1.eFC.QBTK.wTqx.N4aakTWlaexpGgwrOe\",\"updated_at\":\"2017-12-25T16:13:02.139-05:00\"},\"jPpnnAH22MVSwcRpccW3jA\":{\"token\":\"$2a$10$Q5Hh6n0.y0J0HS/tITLGseOZaQmZ2gtIMTY1OiyEN/fO.jKK.24PS\",\"expiry\":1515445995,\"last_token\":\"$2a$10$mNXeclNxuuWx/t7jvE9Ymuks5kGHQHU/8tjZRIGHJf/tWKlFnpLXy\",\"updated_at\":\"2017-12-25T16:13:15.660-05:00\"}}"], ["updated_at", "2017-12-25 21:13:15.661191"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 236ms (Views: 0.2ms | ActiveRecord: 8.4ms)
+
+

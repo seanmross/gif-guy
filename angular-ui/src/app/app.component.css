@@ -23,3 +23,7 @@
     line-height: inherit;
     white-space: nowrap;
 }
+.nav-custom:hover {
+    color: #26a69a !important;
+    cursor: pointer;
+}
