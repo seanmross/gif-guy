@@ -5,7 +5,7 @@ import { RandomGif } from '../../models/gif.interface';
 import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../../../environments/environment';
 import { MaterializeAction } from "angular2-materialize";
-import { AuthDialogComponent } from '../../auth-dialog/auth-dialog.component';
+import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'home',

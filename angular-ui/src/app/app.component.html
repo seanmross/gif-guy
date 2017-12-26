@@ -17,14 +17,14 @@
                 <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
             </div>
             <div *ngIf="tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
+                <a class="nav-item nav-link nav-custom" [routerLink]=""> Profile </a>
             </div>
             <div *ngIf="tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom"> Sign out </a>
+                <a class="nav-item nav-link nav-custom" (click)="tokenAuthService.signOut()"> Sign out </a>
             </div>
         </div>
     </div>
 </nav>
 <br>
-<router-outlet></router-outlet>
 <app-auth-dialog #authDialog></app-auth-dialog>
+<router-outlet></router-outlet>

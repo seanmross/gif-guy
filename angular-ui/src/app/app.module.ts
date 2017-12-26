@@ -14,7 +14,9 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RandomGifService } from './services/random-gif.service';
 import { SearchGifsService } from './services/search-gifs.service';
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
     HomeComponent,
     SearchComponent,
     FavoritesComponent,
-    AuthDialogComponent
+    AuthDialogComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,

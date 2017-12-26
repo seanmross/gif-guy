@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { MaterializeAction } from "angular2-materialize";
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { Angular2TokenService } from 'angular2-token';
+import { environment } from '../environments/environment';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,12 @@ import { Angular2TokenService } from 'angular2-token';
 })
 export class AppComponent {
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
-  
-  constructor(
-    public tokenAuthService: Angular2TokenService
-  ) { }
-  
+
+  constructor(private tokenAuthService: Angular2TokenService) {
+    this.tokenAuthService.init(environment.token_auth_config);
+  }
+
   presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
     this.authDialog.openDialog(mode);
   }
-  
 }
