@@ -11,7 +11,7 @@
         <!-- Navbar right -->
         <div class="nav">
             <div *ngIf="!tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog()">Sign in</a>
+                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign in')">Sign in</a>
             </div>
             <div *ngIf="!tokenAuthService.userSignedIn()">
                 <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>

@@ -1,10 +1,11 @@
 <div class="container">
   <div class="modal" materialize="modal" [materializeActions]="modalActions">
     <div class="modal-content modal-custom-height">
+      
       <div class="modal-header">
         <h4 class="grey-text text-darken-2">{{authMode}}</h4>
-        
       </div>
+
       <div class="modal-body">
         <app-login-form (onFormResult)="onLoginFormResult($event)" *ngIf="isLoginMode()"></app-login-form>
         <app-register-form (onFormResult)="onRegisterFormResult($event)" *ngIf="isRegisterMode()"></app-register-form>
@@ -21,6 +22,7 @@
           </span>
         </p>
       </div>
+      
     </div>
   </div>
 </div>

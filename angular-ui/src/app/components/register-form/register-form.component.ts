@@ -3,8 +3,7 @@ import { Angular2TokenService } from "angular2-token";
 
 @Component({
   selector: 'app-register-form',
-  templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.sass']
+  templateUrl: './register-form.component.html'
 })
 export class RegisterFormComponent implements OnInit {
 
@@ -16,14 +15,14 @@ export class RegisterFormComponent implements OnInit {
 
   @Output() onFormResult = new EventEmitter<any>();
 
-  constructor(private tokenAuthSerivce: Angular2TokenService) { }
+  constructor(private tokenAuthService: Angular2TokenService) { }
 
   ngOnInit() { }
 
 
   onSignUpSubmit() {
 
-    this.tokenAuthSerivce.registerAccount(this.signUpUser).subscribe(
+    this.tokenAuthService.registerAccount(this.signUpUser).subscribe(
 
       (res) => {
 

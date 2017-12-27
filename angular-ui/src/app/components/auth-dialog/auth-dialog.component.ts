@@ -1,19 +1,16 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
 import { MaterializeAction } from "angular2-materialize";
 
 @Component({
   selector: 'app-auth-dialog',
   templateUrl: './auth-dialog.component.html',
-  styleUrls: ['./auth-dialog.component.sass']
+  styleUrls: ['./auth-dialog.component.scss']
 })
-export class AuthDialogComponent implements OnInit {
+export class AuthDialogComponent {
+  constructor() {}
 
   @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
   modalActions = new EventEmitter<string | MaterializeAction>();
-
-  constructor() {
-
-  }
 
   onLoginFormResult(e) {
     if (e.signedIn)
@@ -38,9 +35,6 @@ export class AuthDialogComponent implements OnInit {
 
   closeDialog() {
     this.modalActions.emit({ action: "modal", params: ['close'] });
-  }
-
-  ngOnInit() {
   }
 
   isLoginMode() { return this.authMode == 'Sign in' }
