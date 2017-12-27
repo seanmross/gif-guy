@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { RandomGifService } from './../../services/random-gif.service';
 import { Observable } from 'rxjs/Rx';
 import { RandomGif } from '../../models/gif.interface';
@@ -17,10 +17,12 @@ export class HomeComponent implements OnInit {
   public currentDay:string;
   
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
+  @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
+
 
   constructor( 
     private randomGifService:RandomGifService,
-    private tokenService: Angular2TokenService
+    private tokenAuthService: Angular2TokenService
   ){}
   
   ngOnInit(){
@@ -45,5 +47,8 @@ export class HomeComponent implements OnInit {
   presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
     this.authDialog.openDialog(mode);
   }
+
+  isLoginMode() { return this.authMode == 'Sign in' }
+  isRegisterMode() { return this.authMode == 'Sign up' }
 
 }

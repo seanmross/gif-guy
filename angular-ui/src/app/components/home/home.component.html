@@ -27,18 +27,27 @@
       <!-- Welcome tile -->
       <div class="col col-lg-6">
         <div class="jumbotron dark">
-          <!-- Connor McGregor Sign Up -->
-          <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="195.28" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-          <!-- Austin Powers Welcome -->
-          <!-- <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="348" height="200.84" alt=""> -->
-          <br><br><br>
-          <div class="lead" style="font-size:120%;color:white">
-            <span>
-              <a class="btn btn-primary btn-custom" (click)="presentAuthDialog()">Sign in</a>
-            </span> or
-            <span>
-              <a class="btn btn-primary btn-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
-            </span> to start saving, sharing, or downloading your favorite GIFs.
+          <!-- User not signed in mode -->
+          <div *ngIf="!tokenAuthService.userSignedIn()">
+            <!-- Connor McGregor Sign Up -->
+            <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
+              allowFullScreen></iframe>
+            <br><br><br>
+            <div class="lead" style="font-size:120%;color:white">
+              <span>
+                <a class="btn btn-primary btn-custom" (click)="presentAuthDialog()">Sign in</a>
+              </span> or
+              <span>
+                <a class="btn btn-primary btn-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
+              </span> to start saving, sharing, or downloading your favorite GIFs.
+            </div>
+          </div>
+          <!-- User signed in mode -->
+          <div *ngIf="tokenAuthService.userSignedIn()">
+            <!-- Austin Powers Welcome -->
+            <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="360" height="227.47" alt="">
+            <br><br><br>
+            <p class="lead">Welcome, user!</p>
           </div>
         </div>
       </div>
