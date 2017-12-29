@@ -20,6 +20,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RandomGifService } from './services/random-gif.service';
 import { SearchGifsService } from './services/search-gifs.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AuthService } from './services/auth.service';
     RandomGifService,
     SearchGifsService,
     Angular2TokenService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
