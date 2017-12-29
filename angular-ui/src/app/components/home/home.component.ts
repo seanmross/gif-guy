@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
   
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
   @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
-
-
+  
   constructor( 
     private randomGifService:RandomGifService,
     private tokenAuthService: Angular2TokenService

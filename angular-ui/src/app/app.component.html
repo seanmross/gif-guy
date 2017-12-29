@@ -1,30 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container">
-        <a class="navbar-title-custom-1" routerLink="">Gif<span class="navbar-title-custom-2">hub</span></a>
-        <!-- Navbar left -->
-        <div class="collapse navbar-collapse">
-            <div class="nav">
-                <a class="nav-item nav-link nav-custom" routerLink="search" routerLinkActive="active">Search</a>
-                <a class="nav-item nav-link nav-custom" routerLink="favorites" routerLinkActive="active">Favorites</a>
-            </div>
-        </div>
-        <!-- Navbar right -->
-        <div class="nav">
-            <div *ngIf="!tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign in')">Sign in</a>
-            </div>
-            <div *ngIf="!tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
-            </div>
-            <div *ngIf="tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" [routerLink]=""> Profile </a>
-            </div>
-            <div *ngIf="tokenAuthService.userSignedIn()">
-                <a class="nav-item nav-link nav-custom" (click)="tokenAuthService.signOut()"> Sign out </a>
-            </div>
-        </div>
-    </div>
-</nav>
-<br>
-<app-auth-dialog #authDialog></app-auth-dialog>
-<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

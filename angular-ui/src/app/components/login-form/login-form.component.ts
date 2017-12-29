@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Angular2TokenService } from "angular2-token";
+import { Component, Output, EventEmitter } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html'
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
   signInUser = {
     email: '',
@@ -13,26 +13,19 @@ export class LoginFormComponent implements OnInit {
   };
 
   @Output() onFormResult = new EventEmitter<any>();
-  constructor(private tokenAuthService: Angular2TokenService) { }
-
-  ngOnInit() { }
+  constructor(public authService: AuthService) { }
 
   onSignInSubmit() {
-
-    this.tokenAuthService.signIn(this.signInUser).subscribe(
-
-      res => {
-        if (res.status == 200) {
-          this.onFormResult.emit({ signedIn: true, res });
+    this.authService.logInUser(this.signInUser).subscribe(
+      result => {
+        if (result.status == 200) {
+          this.onFormResult.emit({ signedIn: true, result });
         }
       },
-
-      err => {
-        console.log('err:', err);
-        this.onFormResult.emit({ signedIn: false, err });
+      error => {
+        console.log('error:', error);
+        this.onFormResult.emit({ signedIn: false, error });
       }
-    )
-
+    );
   }
-
 }

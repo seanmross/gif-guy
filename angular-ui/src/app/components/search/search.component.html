@@ -1,92 +1,90 @@
-<div class="container">
-    <div class="row">
-        <div class="col col-lg-12">
+<div class="row">
+    <div class="col col-lg-12">
 
-            <!-- Search bar tile -->
-            <div class="jumbotron small-padding">
-                <h2>Search</h2>
-                <form>
-                    <div class="input-group">
-                        <input
-                            type="text"
-                            name="searchStr"
-                            [(ngModel)]="searchStr"
-                            (keyup.enter)="searchGifs()"
-                            class="form-control"
-                            placeholder="Search gifs..."
-                            autocomplete="off"
-                        />
-                    </div>    
-                </form>
-                <div class="search-header">
-                    <p class="lead">Search all GIPHY GIFs for a word or phrase.</p>
-                </div>
+        <!-- Search bar tile -->
+        <div class="jumbotron small-padding">
+            <h2>Search</h2>
+            <form>
+                <div class="input-group">
+                    <input
+                        type="text"
+                        name="searchStr"
+                        [(ngModel)]="searchStr"
+                        (keyup.enter)="searchGifs()"
+                        class="form-control"
+                        placeholder="Search gifs..."
+                        autocomplete="off"
+                    />
+                </div>    
+            </form>
+            <div class="search-header">
+                <p class="lead">Search all GIPHY GIFs for a word or phrase.</p>
             </div>
-
-            <!-- GIF results tile -->
-            <div *ngIf="gifs && gifs.length > 0">            
-                <div class="jumbotron small-padding">
-                    <!-- Search string & total results data -->
-                    <h2 class="search-result">{{ searchResult }}</h2>
-                    <div *ngIf="paginationData">
-                        <p class="lead">{{ paginationData.total_count | number }} GIFs found.</p>            
-                    </div>
-                    <!-- Pagination -->
-                    <div class="row">
-                        <!-- PageSize dropdown -->
-                        <div class="col-lg-3">
-                            <div ngbDropdown class="d-inline-block">
-                                <span class="lead dropdown-text">GIFs per page</span> 
-                                <button class="btn btn-primary" ngbDropdownToggle>{{limit}}</button>
-                                <div ngbDropdownMenu>
-                                    <button class="dropdown-item" (click)="setPageSize(20)">20</button>
-                                    <button class="dropdown-item" (click)="setPageSize(40)">40</button>
-                                    <button class="dropdown-item" (click)="setPageSize(80)">80</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Pagination bar -->
-                        <div class="col-lg-9">
-                            <div class="pagination-bar">
-                            <ngb-pagination
-                                [collectionSize]="paginationData.total_count"
-                                [(page)]="currentPage"
-                                [(pageSize)]="limit"
-                                [maxSize]="5" [rotate]="true"
-                                (pageChange)="searchGifs()"
-                                [boundaryLinks]="true">
-                            </ngb-pagination>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- Display GIFs -->
-                    <div class="row">
-                        <div *ngFor="let gif of gifs">
-                            <div class="col col-lg-3">
-                                <img src="{{ gif.images.fixed_width.url }}" class="gif" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Bad Result -->
-            <div *ngIf="gifs && gifs.length == 0">
-                <div class="jumbotron small-padding">
-                    <h2 class="search-result">{{ searchResult }}</h2>
-                    <p class="lead">Sorry, no GIFs found.</p>
-                </div>
-                
-            </div>
-
-            <!-- Logo -->
-            <div *ngIf="!gifs">
-                <div class="align-center">
-                    <img src="/assets/gh-logo.png" width="100" height="100" alt="">
-                </div>
-            </div>
-
         </div>
+
+        <!-- GIF results tile -->
+        <div *ngIf="gifs && gifs.length > 0">            
+            <div class="jumbotron small-padding">
+                <!-- Search string & total results data -->
+                <h2 class="search-result">{{ searchResult }}</h2>
+                <div *ngIf="paginationData">
+                    <p class="lead">{{ paginationData.total_count | number }} GIFs found.</p>            
+                </div>
+                <!-- Pagination -->
+                <div class="row">
+                    <!-- PageSize dropdown -->
+                    <div class="col-lg-3">
+                        <div ngbDropdown class="d-inline-block">
+                            <span class="lead dropdown-text">GIFs per page</span> 
+                            <button class="btn btn-primary" ngbDropdownToggle>{{limit}}</button>
+                            <div ngbDropdownMenu>
+                                <button class="dropdown-item" (click)="setPageSize(20)">20</button>
+                                <button class="dropdown-item" (click)="setPageSize(40)">40</button>
+                                <button class="dropdown-item" (click)="setPageSize(80)">80</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination bar -->
+                    <div class="col-lg-9">
+                        <div class="pagination-bar">
+                        <ngb-pagination
+                            [collectionSize]="paginationData.total_count"
+                            [(page)]="currentPage"
+                            [(pageSize)]="limit"
+                            [maxSize]="5" [rotate]="true"
+                            (pageChange)="searchGifs()"
+                            [boundaryLinks]="true">
+                        </ngb-pagination>
+                    </div>
+                    </div>
+                </div>
+                <!-- Display GIFs -->
+                <div class="row">
+                    <div *ngFor="let gif of gifs">
+                        <div class="col col-lg-3">
+                            <img src="{{ gif.images.fixed_width.url }}" class="gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bad Result -->
+        <div *ngIf="gifs && gifs.length == 0">
+            <div class="jumbotron small-padding">
+                <h2 class="search-result">{{ searchResult }}</h2>
+                <p class="lead">Sorry, no GIFs found.</p>
+            </div>
+            
+        </div>
+
+        <!-- Logo -->
+        <div *ngIf="!gifs">
+            <div class="align-center">
+                <img src="/assets/gh-logo.png" width="100" height="100" alt="">
+            </div>
+        </div>
+
     </div>
 </div>

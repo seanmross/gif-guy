@@ -1,73 +1,71 @@
-<div class="container">
-
-    <div class="row" style="text-align:center">
-      <!-- Brand tile -->
-      <div class="col col-lg-6">
-          <div class="jumbotron dark">
-          <h1 class="navbar-title-custom-1">
-            <span>
-              <img src="/assets/gh-logo.png" width="100" height="100" alt="">
-            </span>
-            Gif
-            <span class="navbar-title-custom-2">
-                hub
-            </span>
-          </h1>
-          <p class="lead" style="font-size:160%">A simple, personalized UI for your favorite GIFs.</p>
-          <br>
-          <hr>
-          <div>
-            <div class="lead giphy-credit">powered by</div>
-            <span>
-              <img class="giphy-logo" src="/assets/giphy-logo.gif" alt="">
-            </span>
-          </div>
+<div class="row" style="text-align:center">
+  <!-- Brand tile -->
+  <div class="col col-lg-6">
+      <div class="jumbotron dark">
+      <h1 class="navbar-title-custom-1">
+        <span>
+          <img src="/assets/gh-logo.png" width="100" height="100" alt="">
+        </span>
+        Gif
+        <span class="navbar-title-custom-2">
+            hub
+        </span>
+      </h1>
+      <p class="lead" style="font-size:160%">A simple, personalized UI for your favorite GIFs.</p>
+      <br>
+      <hr>
+      <div>
+        <div class="lead giphy-credit">powered by</div>
+        <span>
+          <img class="giphy-logo" src="/assets/giphy-logo.gif" alt="">
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- Welcome tile -->
+  <div class="col col-lg-6">
+    <div class="jumbotron dark">
+      <!-- User not signed in mode -->
+      <div *ngIf="!tokenAuthService.userSignedIn()">
+        <!-- Connor McGregor Sign Up -->
+        <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
+          allowFullScreen></iframe>
+        <br><br><br>
+        <div class="lead" style="font-size:120%;color:white">
+          <span>
+            <a class="btn btn-primary btn-custom" (click)="presentAuthDialog()">Sign in</a>
+          </span> or
+          <span>
+            <a class="btn btn-primary btn-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
+          </span> to start saving, sharing, or downloading your favorite GIFs.
         </div>
       </div>
-      <!-- Welcome tile -->
-      <div class="col col-lg-6">
-        <div class="jumbotron dark">
-          <!-- User not signed in mode -->
-          <div *ngIf="!tokenAuthService.userSignedIn()">
-            <!-- Connor McGregor Sign Up -->
-            <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
-              allowFullScreen></iframe>
-            <br><br><br>
-            <div class="lead" style="font-size:120%;color:white">
-              <span>
-                <a class="btn btn-primary btn-custom" (click)="presentAuthDialog()">Sign in</a>
-              </span> or
-              <span>
-                <a class="btn btn-primary btn-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
-              </span> to start saving, sharing, or downloading your favorite GIFs.
-            </div>
-          </div>
-          <!-- User signed in mode -->
-          <div *ngIf="tokenAuthService.userSignedIn()">
-            <!-- Austin Powers Welcome -->
-            <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
-            <br><br><br>
-            <p class="lead">Welcome, user!</p>
-          </div>
+      <!-- User signed in mode -->
+      <div *ngIf="tokenAuthService.userSignedIn()">
+        <!-- Austin Powers Welcome -->
+        <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
+        <br><br><br>
+        <p class="lead">Welcome, user!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trending/Day of Week tile -->
+<div class="row">
+  <div class="col col-lg-12">
+    <div class="jumbotron">
+      <div class="align">
+        <div *ngIf="tokenAuthService.userSignedIn()">
+          <h1 class="lead">Happy {{ currentDay }}, username.</h1>
+        </div>
+        <br>
+        <div *ngIf="gif">
+          <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
         </div>
       </div>
     </div>
-
-    <!-- Trending/Day of Week tile -->
-    <div class="row">
-      <div class="col col-lg-6">
-        <div class="jumbotron">
-          <div class="align">
-            <h1 class="lead">Happy {{ currentDay }}, username.</h1>
-            <br>
-            <div *ngIf="gif">
-              <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  </div>
 </div>
 
 <app-auth-dialog #authDialog></app-auth-dialog>
