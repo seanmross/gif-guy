@@ -3,9 +3,21 @@
     <div class="card blue-grey lighten-5 z-depth-4" style="margin-top: 5em">
       <div class="card-content">
         <div style="margin-bottom: 0" class="row ">
-          
-          <div class="col l4 s12 center" style="margin-bottom: 1em">
-            <i class="fa fa-user-circle-o blue-grey-text darken-2" style="font-size: 8em" aria-hidden="true"></i>
+
+          <div *ngIf="authTokenService.currentUserData">
+
+            <div *ngIf="generateGravatarLink()">
+              <div class="col l4 s12 center" style="margin-bottom: 1em">
+                <img src="{{ generateGravatarLink() }}" width="120" style="margin-top:10px;">
+              </div>
+            </div>
+
+            <div *ngIf="!generateGravatarLink()">
+              <div class="col l4 s12 center" style="margin-bottom: 1em">
+                <i class="fa fa-user-circle-o blue-grey-text darken-2" style="font-size: 8em" aria-hidden="true"></i>
+              </div>
+            </div>
+
           </div>
 
           <div *ngIf="authTokenService.currentUserData" class="col l8 s12">

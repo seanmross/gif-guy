@@ -52,3 +52,6 @@ hr {
 .btn-custom:hover {
     cursor: pointer !important;
 }
+.jumbotron {
+    margin-bottom: 0;
+}

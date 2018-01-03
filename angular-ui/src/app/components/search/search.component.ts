@@ -40,10 +40,10 @@ export class SearchComponent {
         // Calculate offset
         this.offset = (this.currentPage - 1) * this.limit;
         // Call API & save response data
-        this.searchGifsService.searchGifs(this.searchStr, this.offset, this.limit)
-            .subscribe( response => {
-                this.gifs = response.data;
-                this.paginationData = response.pagination;
+        this.searchGifsService.searchGifs(this.searchStr, this.offset, this.limit).subscribe( 
+            res => {
+                this.gifs = res.data;
+                this.paginationData = res.pagination;
             });
         // Save search string
         this.searchResult = this.searchStr;

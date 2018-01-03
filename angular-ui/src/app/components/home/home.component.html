@@ -1,4 +1,5 @@
 <div class="row" style="text-align:center">
+
   <!-- Brand tile -->
   <div class="col col-lg-6">
       <div class="jumbotron dark">
@@ -22,11 +23,13 @@
       </div>
     </div>
   </div>
+
   <!-- Welcome tile -->
   <div class="col col-lg-6">
     <div class="jumbotron dark">
-      <!-- User not signed in mode -->
-      <div *ngIf="!tokenAuthService.userSignedIn()">
+
+      <!-- User not signed in -->
+      <div *ngIf="!(authService.userSignedIn$ | async)">
         <!-- Connor McGregor Sign Up -->
         <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
           allowFullScreen></iframe>
@@ -40,13 +43,15 @@
           </span> to start saving, sharing, or downloading your favorite GIFs.
         </div>
       </div>
-      <!-- User signed in mode -->
-      <div *ngIf="tokenAuthService.userSignedIn()">
+
+      <!-- User signed in -->
+      <div *ngIf="(authService.userSignedIn$ | async)">
         <!-- Austin Powers Welcome -->
         <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
         <br><br><br>
-        <p class="lead">Welcome, user!</p>
+        <p class="lead">Welcome, {{ tokenAuthService.currentUserData.email }}!</p>
       </div>
+
     </div>
   </div>
 </div>
@@ -54,11 +59,9 @@
 <!-- Trending/Day of Week tile -->
 <div class="row">
   <div class="col col-lg-12">
-    <div class="jumbotron">
+    <div class="jumbotron dark">
       <div class="align">
-        <div *ngIf="tokenAuthService.userSignedIn()">
-          <h1 class="lead">Happy {{ currentDay }}, username.</h1>
-        </div>
+        <p class="lead">Happy {{ currentDay }}.</p>
         <br>
         <div *ngIf="gif">
           <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">

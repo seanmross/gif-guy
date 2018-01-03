@@ -17,14 +17,14 @@ export class LoginFormComponent {
 
   onSignInSubmit() {
     this.authService.logInUser(this.signInUser).subscribe(
-      result => {
-        if (result.status == 200) {
-          this.onFormResult.emit({ signedIn: true, result });
+      res => {
+        if (res.status == 200) {
+          this.onFormResult.emit({ signedIn: true, res });
         }
       },
-      error => {
-        console.log('error:', error);
-        this.onFormResult.emit({ signedIn: false, error });
+      err => {
+        console.log(err);
+        this.onFormResult.emit({ signedIn: false, err });
       }
     );
   }

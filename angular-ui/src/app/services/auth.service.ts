@@ -1,20 +1,33 @@
-import { Injectable } from '@angular/core';
-import { Angular2TokenService } from "angular2-token";
-import { Subject, Observable } from "rxjs";
-import { Response } from "@angular/http";
+import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Angular2TokenService } from 'angular2-token';
+import { Response } from '@angular/http';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
+
   userSignedIn$: Subject<boolean> = new Subject();
 
-  constructor(public authService: Angular2TokenService) {
-    this.authService.validateToken().subscribe(
-      res => res.status == 200 ? this.userSignedIn$.next(res.json().success) : this.userSignedIn$.next(false)
-    )
+  constructor(
+    public tokenAuthService: Angular2TokenService
+  ) {
+    this.tokenAuthService.validateToken().subscribe(
+      res => {
+        if (res.status == 200) {
+          this.userSignedIn$.next(true);
+        }
+      },
+      err => {
+        this.userSignedIn$.next(false);
+        console.log(err.statusText);
+      }
+    );
   }
 
   logOutUser(): Observable<Response> {
-    return this.authService.signOut().map(
+    return this.tokenAuthService.signOut().map(
       res => {
         this.userSignedIn$.next(false);
         return res;
@@ -23,7 +36,7 @@ export class AuthService {
   }
 
   registerUser(signUpData: { email: string, password: string, passwordConfirmation: string }): Observable<Response> {
-    return this.authService.registerAccount(signUpData).map(
+    return this.tokenAuthService.registerAccount(signUpData).map(
       res => {
         this.userSignedIn$.next(true);
         return res;
@@ -32,7 +45,7 @@ export class AuthService {
   }
 
   logInUser(signInData: { email: string, password: string }): Observable<Response> {
-    return this.authService.signIn(signInData).map(
+    return this.tokenAuthService.signIn(signInData).map(
       res => {
         this.userSignedIn$.next(true);
         return res;

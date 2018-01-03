@@ -6,9 +6,10 @@ import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../../../environments/environment';
 import { MaterializeAction } from "angular2-materialize";
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -20,10 +21,11 @@ export class HomeComponent implements OnInit {
   @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
   
   constructor( 
-    private randomGifService:RandomGifService,
-    private tokenAuthService: Angular2TokenService
+    public randomGifService: RandomGifService,
+    public tokenAuthService: Angular2TokenService,
+    public authService: AuthService
   ){}
-  
+
   ngOnInit(){
     this.getRandomGif();
   }

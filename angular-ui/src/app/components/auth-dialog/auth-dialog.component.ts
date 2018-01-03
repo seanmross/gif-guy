@@ -16,7 +16,7 @@ export class AuthDialogComponent {
     if (e.signedIn)
       this.closeDialog();
     else {
-      alert(e.err.json().errors[0])
+      alert(e.err.json().errors[0]);
     }
   }
 
@@ -24,7 +24,7 @@ export class AuthDialogComponent {
     if (e.signedUp)
       this.closeDialog();
     else {
-      alert(e.err.json().errors.full_messages[0])
+      alert(e.err.json().errors.full_messages[0]);
     }
   }
 

@@ -19,14 +19,17 @@ export class RegisterFormComponent {
 
   onSignUpSubmit() {
     this.authService.registerUser(this.signUpUser).subscribe(
-      result => {
-        if (result.status == 200) {
-          this.onFormResult.emit({ signedUp: true, result })
+      (res) => {
+
+        if (res.status == 200) {
+          this.onFormResult.emit({ signedUp: true, res })
         }
+
       },
-      error => {
-        console.log(error.json())
-        this.onFormResult.emit({ signedUp: false, error })
+
+      (err) => {
+        console.log(err.json())
+        this.onFormResult.emit({ signedUp: false, err })
       }
     );
   }
