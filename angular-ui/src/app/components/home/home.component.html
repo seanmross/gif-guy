@@ -29,7 +29,7 @@
     <div class="jumbotron dark">
 
       <!-- User not signed in -->
-      <div *ngIf="!(authService.userSignedIn$ | async)">
+      <div *ngIf="!(_authService.userSignedIn$ | async)">
         <!-- Connor McGregor Sign Up -->
         <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
           allowFullScreen></iframe>
@@ -45,7 +45,7 @@
       </div>
 
       <!-- User signed in -->
-      <div *ngIf="(authService.userSignedIn$ | async)">
+      <div *ngIf="(_authService.userSignedIn$ | async)">
         <!-- Austin Powers Welcome -->
         <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
         <br><br><br>
@@ -56,7 +56,7 @@
   </div>
 </div>
 
-<!-- Trending/Day of Week tile -->
+<!-- Day of Week tile -->
 <div class="row">
   <div class="col col-lg-12">
     <div class="jumbotron dark">
@@ -65,6 +65,25 @@
         <br>
         <div *ngIf="gif">
           <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trending tile -->
+<div class="row">
+  <div class="col col-lg-12">
+    <div class="jumbotron dark">
+      <div class="align">
+        <p class="lead">Trending</p>
+        <br>
+        <div class="row">
+          <div *ngFor="let gif of trendingGifs$ | async">
+            <div class="col col-lg-3">
+              <img class="trending-gif" src="{{ gif.images.fixed_width.url }}" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>

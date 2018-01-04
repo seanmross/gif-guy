@@ -13,12 +13,12 @@ export class NavbarComponent {
     @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
     constructor(
-        public authService: AuthService,
+        public _authService: AuthService,
         private router: Router
     ) {}
 
     logOut() {
-        this.authService.logOutUser().subscribe(() => this.router.navigate(['/']));
+        this._authService.logOutUser().subscribe(() => this.router.navigate(['/']));
     }
 
     presentAuthDialog(mode?: 'Sign in' | 'Sign up') {

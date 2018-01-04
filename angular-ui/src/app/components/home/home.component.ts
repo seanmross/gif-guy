@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { RandomGifService } from './../../services/random-gif.service';
+import { RandomService } from './../../services/random.service';
 import { Observable } from 'rxjs/Rx';
 import { RandomGif } from '../../models/gif.interface';
 import { Angular2TokenService } from 'angular2-token';
@@ -7,6 +7,8 @@ import { environment } from '../../../environments/environment';
 import { MaterializeAction } from "angular2-materialize";
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 import { AuthService } from '../../services/auth.service';
+import { TrendingService } from '../../services/trending.service';
+import { Gif } from '../../models/gif.interface';
 
 @Component({
   selector: 'app-home',
@@ -16,18 +18,20 @@ import { AuthService } from '../../services/auth.service';
 export class HomeComponent implements OnInit {
   public gif:RandomGif;
   public currentDay:string;
+  public trendingGifs$:Observable<Gif[]>;
   
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
   @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
   
   constructor( 
-    public randomGifService: RandomGifService,
-    public tokenAuthService: Angular2TokenService,
-    public authService: AuthService
+    public _randomService: RandomService,
+    public _authService: AuthService,
+    public _trendingService: TrendingService
   ){}
 
   ngOnInit(){
     this.getRandomGif();
+    this.trendingGifs$ = this._trendingService.getTrending();
   }
 
   getCurrentDay(){
@@ -39,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
   
   getRandomGif(){
-    this.randomGifService.getRandomGif(this.getCurrentDay())
+    this._randomService.getRandomGif(this.getCurrentDay())
       .subscribe((result) => {
         this.gif = result;
       })

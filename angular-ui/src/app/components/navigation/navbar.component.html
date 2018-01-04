@@ -13,16 +13,16 @@
         </div>
         <!-- Navbar right -->
         <div class="nav">
-            <div *ngIf="!(authService.userSignedIn$ | async)">
+            <div *ngIf="!(_authService.userSignedIn$ | async)">
                 <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign in')">Sign in</a>
             </div>
-            <div *ngIf="!(authService.userSignedIn$ | async)">
+            <div *ngIf="!(_authService.userSignedIn$ | async)">
                 <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
             </div>
-            <div *ngIf="(authService.userSignedIn$ | async)">
+            <div *ngIf="(_authService.userSignedIn$ | async)">
                 <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
             </div>
-            <div *ngIf="(authService.userSignedIn$ | async)">
+            <div *ngIf="(_authService.userSignedIn$ | async)">
                 <a class="nav-item nav-link nav-custom" (click)="logOut()"> Sign out </a>
             </div>
         </div>

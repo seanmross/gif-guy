@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 
 // Define service
 @Injectable()
-export class RandomGifService {
+export class RandomService {
     private randomGifUrl:string;
 
     constructor(private http:Http){}

@@ -1,6 +1,6 @@
 // Import libraries
 import { Component, OnInit } from '@angular/core';
-import { SearchGifsService } from './../../services/search-gifs.service';
+import { SearchService } from './../../services/search.service';
 import { Observable } from 'rxjs/Rx';
 import { Gif } from './../../models/gif.interface';
 import { Pagination } from './../../models/pagination.interface';
@@ -32,7 +32,7 @@ export class SearchComponent {
     
     // Inject services
     constructor(
-        private searchGifsService:SearchGifsService
+        private searchService:SearchService
     ){}
     
     // Search GIFs for a word or phrase
@@ -40,7 +40,7 @@ export class SearchComponent {
         // Calculate offset
         this.offset = (this.currentPage - 1) * this.limit;
         // Call API & save response data
-        this.searchGifsService.searchGifs(this.searchStr, this.offset, this.limit).subscribe( 
+        this.searchService.search(this.searchStr, this.offset, this.limit).subscribe( 
             res => {
                 this.gifs = res.data;
                 this.paginationData = res.pagination;

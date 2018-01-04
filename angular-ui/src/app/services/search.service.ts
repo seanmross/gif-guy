@@ -7,19 +7,19 @@ import 'rxjs/add/operator/map';
 
 /*
 |--------------------------------------------------------------------------
-| Search GIFs Service
+| Search Service
 |--------------------------------------------------------------------------
 |    * Implements phrase logic (replace spaces with '+') before API call
 |    * Data binding would reveal '+' in the view if logic were in controller
  */
 
 @Injectable()
-export class SearchGifsService {
+export class SearchService {
     private searchUrl:string;
 
     constructor(private http:Http){}
     
-    searchGifs(searchStr:string, page:number, perPage:number):Observable<any>{
+    search(searchStr:string, page:number, perPage:number):Observable<any>{
         if (searchStr.includes(' ')) {
             searchStr = searchStr.replace(/ /g, '+');
         }

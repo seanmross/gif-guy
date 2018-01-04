@@ -17,10 +17,11 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { NavbarComponent } from './components/navigation/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import { RandomGifService } from './services/random-gif.service';
-import { SearchGifsService } from './services/search-gifs.service';
+import { RandomService } from './services/random.service';
+import { SearchService } from './services/search.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { TrendingService } from './services/trending.service';
 
 @NgModule({
   declarations: [
@@ -43,11 +44,12 @@ import { AuthGuard } from './guards/auth.guard';
     MaterializeModule
   ],
   providers: [
-    RandomGifService,
-    SearchGifsService,
+    RandomService,
+    SearchService,
     Angular2TokenService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    TrendingService
   ],
   bootstrap: [AppComponent]
 })
