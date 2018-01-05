@@ -20,18 +20,19 @@ export class HomeComponent implements OnInit {
   public currentDay:string;
   public trendingGifs$:Observable<Gif[]>;
   
-  @ViewChild('authDialog') authDialog: AuthDialogComponent;
-  @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
+  // @ViewChild('authDialog') authDialog: AuthDialogComponent;
+  // @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
   
   constructor( 
     public _randomService: RandomService,
     public _authService: AuthService,
+    public _tokenAuthService: Angular2TokenService,
     public _trendingService: TrendingService
   ){}
 
   ngOnInit(){
     this.getRandomGif();
-    this.trendingGifs$ = this._trendingService.getTrending();
+    this.getTrendingGifs();
   }
 
   getCurrentDay(){
@@ -43,17 +44,21 @@ export class HomeComponent implements OnInit {
   }
   
   getRandomGif(){
-    this._randomService.getRandomGif(this.getCurrentDay())
-      .subscribe((result) => {
-        this.gif = result;
+    this._randomService.getRandomGif(this.getCurrentDay()).subscribe(
+      res => {
+        this.gif = res;
       })
   }
 
-  presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
-    this.authDialog.openDialog(mode);
+  getTrendingGifs(){
+    this.trendingGifs$ = this._trendingService.getTrending();
   }
 
-  isLoginMode() { return this.authMode == 'Sign in' }
-  isRegisterMode() { return this.authMode == 'Sign up' }
+  // presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
+  //   this.authDialog.openDialog(mode);
+  // }
+
+  // isLoginMode() { return this.authMode == 'Sign in' }
+  // isRegisterMode() { return this.authMode == 'Sign up' }
 
 }

@@ -49,7 +49,7 @@
         <!-- Austin Powers Welcome -->
         <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
         <br><br><br>
-        <p class="lead">Welcome, {{ tokenAuthService.currentUserData.email }}!</p>
+        <p class="lead">Welcome, {{ _tokenAuthService.currentUserData.email }}!</p>
       </div>
 
     </div>
@@ -64,6 +64,7 @@
         <p class="lead">Happy {{ currentDay }}.</p>
         <br>
         <div *ngIf="gif">
+          <div></div>
           <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
         </div>
       </div>
@@ -90,4 +91,4 @@
   </div>
 </div>
 
-<app-auth-dialog #authDialog></app-auth-dialog>
+<!-- <app-auth-dialog #authDialog></app-auth-dialog> -->
