@@ -4,11 +4,9 @@ import { Observable } from 'rxjs/Rx';
 import { RandomGif } from '../../models/gif.interface';
 import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../../../environments/environment';
-import { MaterializeAction } from "angular2-materialize";
-import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
-import { AuthService } from '../../services/auth.service';
 import { TrendingService } from '../../services/trending.service';
 import { Gif } from '../../models/gif.interface';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -20,14 +18,11 @@ export class HomeComponent implements OnInit {
   public currentDay:string;
   public trendingGifs$:Observable<Gif[]>;
   
-  // @ViewChild('authDialog') authDialog: AuthDialogComponent;
-  // @Input('auth-mode') authMode: 'Sign in' | 'Sign up' = 'Sign in';
-  
   constructor( 
     public _randomService: RandomService,
-    public _authService: AuthService,
     public _tokenAuthService: Angular2TokenService,
-    public _trendingService: TrendingService
+    public _trendingService: TrendingService,
+    private _authService:AuthService
   ){}
 
   ngOnInit(){
@@ -54,11 +49,15 @@ export class HomeComponent implements OnInit {
     this.trendingGifs$ = this._trendingService.getTrending();
   }
 
-  // presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
-  //   this.authDialog.openDialog(mode);
-  // }
-
-  // isLoginMode() { return this.authMode == 'Sign in' }
-  // isRegisterMode() { return this.authMode == 'Sign up' }
+  //new login logic
+  isLoggedIn(): boolean {
+    return this._authService.isLoggedIn();
+  }
+  isLoggedOut(): boolean {
+    return !this._authService.isLoggedIn();
+  }
+  logOut(): void {
+    this._authService.logout();
+  }
 
 }

@@ -29,7 +29,7 @@
     <div class="jumbotron dark">
 
       <!-- User not signed in -->
-      <div *ngIf="!(_authService.userSignedIn$ | async)">
+      <div *ngIf="isLoggedOut()">
         <!-- Connor McGregor Sign Up -->
         <iframe src="https://giphy.com/embed/xUOrw5LIxb8S9X1LGg" width="360" height="202.04" frameBorder="0" class="giphy-embed"
           allowFullScreen></iframe>
@@ -45,7 +45,7 @@
       </div>
 
       <!-- User signed in -->
-      <div *ngIf="(_authService.userSignedIn$ | async)">
+      <div *ngIf="isLoggedIn()">
         <!-- Austin Powers Welcome -->
         <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
         <br><br><br>

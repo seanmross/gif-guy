@@ -4,8 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { AuthGuard } from './guards/auth.guard';
 
 // Create a constant of type Routes to define routes
 const routes: Routes = [
@@ -25,11 +23,6 @@ const routes: Routes = [
     { 
         path: 'favorites',
         component: FavoritesComponent,
-    },
-    {
-        path: 'profile',
-        component: ProfileComponent,
-        canActivate: [AuthGuard]
     }
 ]
 

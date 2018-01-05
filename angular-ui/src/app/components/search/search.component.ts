@@ -1,6 +1,6 @@
 // Import libraries
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from './../../services/search.service';
+import { SearchService } from './search.service';
 import { Observable } from 'rxjs/Rx';
 import { Gif } from './../../models/gif.interface';
 import { Pagination } from './../../models/pagination.interface';

@@ -5,7 +5,7 @@ import { Angular2TokenService } from 'angular2-token';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AuthenticationService{
+export class AuthService {
     redirectUrl:string;
     
     constructor(

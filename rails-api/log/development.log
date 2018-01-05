@@ -1,0 +1,251 @@
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 09:10:02 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 18ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 09:11:09 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:03:15 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:04:44 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:05:25 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:06:21 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:07:49 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:08:23 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:08:38 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:10:28 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:11:09 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:11:29 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:12:40 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 10:12:44 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 14:29:42 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 25ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2018-01-05 14:48:39 -0500
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'seanmross9@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"TcuQANvFnul_CKUaGSb_mA\":{\"token\":\"$2a$10$UmU2YesQoYU4ZhEolp1uouJiPFTBHkkyr53F.O.ABWe8qtae.88aa\",\"expiry\":1516391319}}"], ["updated_at", "2018-01-05 19:48:39.727483"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 78], ["current_sign_in_at", "2018-01-05 19:48:39.734637"], ["last_sign_in_at", "2018-01-04 15:57:22.928897"], ["updated_at", "2018-01-05 19:48:39.735477"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"TcuQANvFnul_CKUaGSb_mA\":{\"token\":\"$2a$10$dsB/hQAtMMgTRVstVfKu2.6eR8eAUoW6I8j7NzuRQ3EaDu3IZTOA.\",\"expiry\":1516391319,\"last_token\":\"$2a$10$UmU2YesQoYU4ZhEolp1uouJiPFTBHkkyr53F.O.ABWe8qtae.88aa\",\"updated_at\":\"2018-01-05T14:48:39.812-05:00\"}}"], ["updated_at", "2018-01-05 19:48:39.812924"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 288ms (Views: 0.2ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 14:48:39 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "seanmross9@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"TcuQANvFnul_CKUaGSb_mA\":{\"token\":\"$2a$10$dsB/hQAtMMgTRVstVfKu2.6eR8eAUoW6I8j7NzuRQ3EaDu3IZTOA.\",\"expiry\":1516391319,\"last_token\":\"$2a$10$UmU2YesQoYU4ZhEolp1uouJiPFTBHkkyr53F.O.ABWe8qtae.88aa\",\"updated_at\":\"2018-01-05T14:48:39.961-05:00\"}}"], ["updated_at", "2018-01-05 19:48:39.961819"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 86ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2018-01-05 14:49:03 -0500
+Processing by DeviseTokenAuth::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "seanmross9@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"}}"], ["updated_at", "2018-01-05 19:49:03.299826"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2018-01-05 14:49:31 -0500
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'seanmross9@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"GjfmADQHc_7wuUGaOhhSuA\":{\"token\":\"$2a$10$air550g.ROGqS0jVD.Z0SO8FRIO691vqCv8XMXmfJBPLOkzATVApG\",\"expiry\":1516391371}}"], ["updated_at", "2018-01-05 19:49:31.718631"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 79], ["current_sign_in_at", "2018-01-05 19:49:31.725714"], ["last_sign_in_at", "2018-01-05 19:48:39.734637"], ["updated_at", "2018-01-05 19:49:31.726545"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"GjfmADQHc_7wuUGaOhhSuA\":{\"token\":\"$2a$10$3feGmtLbl3AGKzszV4i2cOXoh6qRaJngRR2EYcZtL5xjECn/d2ix6\",\"expiry\":1516391371,\"last_token\":\"$2a$10$air550g.ROGqS0jVD.Z0SO8FRIO691vqCv8XMXmfJBPLOkzATVApG\",\"updated_at\":\"2018-01-05T14:49:31.800-05:00\"}}"], ["updated_at", "2018-01-05 19:49:31.800877"], ["id", 3]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 226ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2018-01-05 14:49:38 -0500
+Processing by DeviseTokenAuth::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "seanmross9@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"}}"], ["updated_at", "2018-01-05 19:49:38.712611"], ["id", 3]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 89ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 14:50:26 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 14:53:24 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 14:55:28 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2018-01-05 14:55:37 -0500
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'seanmross9@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"Cf10QxMOuZXAqQVoUzISNQ\":{\"token\":\"$2a$10$paOGOiMZfeD.Z7lE18KSye9zwPV/DpFOA6AgYgkQw0eyp8EsSa2PC\",\"expiry\":1516391737}}"], ["updated_at", "2018-01-05 19:55:37.308903"], ["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 80], ["current_sign_in_at", "2018-01-05 19:55:37.313569"], ["last_sign_in_at", "2018-01-05 19:49:31.725714"], ["updated_at", "2018-01-05 19:55:37.314429"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"Cf10QxMOuZXAqQVoUzISNQ\":{\"token\":\"$2a$10$zux3R4k8RZcB2/H7qsQ/HOxCS2NymwTZG3Qi1ofVFiaiO39Vi8qoa\",\"expiry\":1516391737,\"last_token\":\"$2a$10$paOGOiMZfeD.Z7lE18KSye9zwPV/DpFOA6AgYgkQw0eyp8EsSa2PC\",\"updated_at\":\"2018-01-05T14:55:37.388-05:00\"}}"], ["updated_at", "2018-01-05 19:55:37.388918"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 228ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2018-01-05 14:55:41 -0500
+Processing by DeviseTokenAuth::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "seanmross9@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"}}"], ["updated_at", "2018-01-05 19:55:41.326985"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2018-01-05 14:56:14 -0500
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"seanmross9@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'seanmross9@gmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"BgSJrWZZYvK0oDHpHvkg4g\":{\"token\":\"$2a$10$AadlL53dA5qYBAflJ0r7cu/w6r0R6hAhMnltCH0OLGjXc.3BRt6i2\",\"expiry\":1516391774}}"], ["updated_at", "2018-01-05 19:56:14.562623"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 81], ["current_sign_in_at", "2018-01-05 19:56:14.567658"], ["last_sign_in_at", "2018-01-05 19:55:37.313569"], ["updated_at", "2018-01-05 19:56:14.568504"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"},\"BgSJrWZZYvK0oDHpHvkg4g\":{\"token\":\"$2a$10$tTAVceP07PbujWYgfcXVn.7YJX5C3uIazLtAKVGYclgmJ7Sgx5ReG\",\"expiry\":1516391774,\"last_token\":\"$2a$10$AadlL53dA5qYBAflJ0r7cu/w6r0R6hAhMnltCH0OLGjXc.3BRt6i2\",\"updated_at\":\"2018-01-05T14:56:14.640-05:00\"}}"], ["updated_at", "2018-01-05 19:56:14.641011"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2018-01-05 14:56:44 -0500
+Processing by DeviseTokenAuth::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "seanmross9@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "{\"mnxTSOoF0UXalE0aOm31fg\":{\"token\":\"$2a$10$ls42lwOqSyW4Pk/m9mNtF.a/01cWdMkrEAUJJR24ejU/kjga0n1Y2\",\"expiry\":1515904177,\"last_token\":\"$2a$10$SWWL/1H8raL1bXuqcRD3v.cknxeseFTrjgOeC84JjNI4vc4V1Yh5S\",\"updated_at\":\"2017-12-30T23:29:37.060-05:00\"},\"xADkL_S8NycL_JVWSpIVNw\":{\"token\":\"$2a$10$DfpbtEOQSiQxy0O6mwy1j.xJSh7CmugAbPVKfQz7778qgY83jLTE6\",\"expiry\":1515907496,\"last_token\":\"$2a$10$3HHlm2X6CqXMK6o.lF45HeNr6a2/WHgPN.CGvLI49UtvlZ0Mzkxwe\",\"updated_at\":\"2017-12-31T00:24:56.933-05:00\"},\"yLt5uGrrJetKZeLFwPsR-A\":{\"token\":\"$2a$10$Fsa.lliRgGlf7B65EEsiG.8b4JAkJLzf1y.fvR7z3ZIu0k4Y4hTa.\",\"expiry\":1515908007,\"last_token\":\"$2a$10$kdKmAXD.D7itIOxntwLpAOHvq1vxpJ1Dw0JlmmkNwS6thPPeBniOO\",\"updated_at\":\"2017-12-31T00:33:31.117-05:00\"},\"l-YsMym5s2uS0U9BUGFMVw\":{\"token\":\"$2a$10$c8hmsoMBJNvtvcgADYvsgOS/1ANlnhcc2CTv7EwUak7q7kpr8GeMm\",\"expiry\":1516161816,\"last_token\":\"$2a$10$76yrYjcLD7sYy9SFMMKeHuDBLMSuYbCNyekJOIihkv0Zw2pOSpbs.\",\"updated_at\":\"2018-01-02T23:04:11.285-05:00\"},\"f7Qyn96MfcRx2FR_UtDzcA\":{\"token\":\"$2a$10$erp/iwQ5IFk64ApDl2sHr.LhU4EHmnavFbttlCy6gqcqMhOX.Zvvm\",\"expiry\":1516166507,\"last_token\":\"$2a$10$OkDE4vbpEuJjNCiILBtNvOk8dUpFUyhTAsObDpfKOcWcbCWJHgjJW\",\"updated_at\":\"2018-01-03T00:21:47.950-05:00\"},\"TAVk8DMwkA92YKl4R_lanA\":{\"token\":\"$2a$10$nULvKaOCTwJ/bJMBSzr6a.HtwzEdCfSNqozXYVlfz7ouAZJf.4zyq\",\"expiry\":1516231311,\"last_token\":\"$2a$10$NhdOzrgcxD3/JAcOkjvfB.WZ9NSmjehy4TkAuOap75IkMq6DuMjGW\",\"updated_at\":\"2018-01-03T18:21:51.790-05:00\"},\"S2DaHpj6VURcwbUwQEwOFQ\":{\"token\":\"$2a$10$OB0arowpsLgpVkQejX3J3eahxeQh43RazmjleYMRjp.eWRF5SNi/W\",\"expiry\":1516231804,\"last_token\":\"$2a$10$4GZzb8Cn9CKHs85d0Ijoe.R5XK1egZUua0r/VGOJQX5DfcRI/yi5S\",\"updated_at\":\"2018-01-03T18:30:04.236-05:00\"},\"88Yoc4GZh6qJJHpcs8zAXQ\":{\"token\":\"$2a$10$Hm2SBLkApOOCQtS7pkwqZ.eVqRts/T0w.vm8eYNbu8GKRUNWFleUC\",\"expiry\":1516231909,\"last_token\":\"$2a$10$q11WIaPfsP3xGRY70syBjepZCuQyHK.2.HDjbByiyJXNf0p11Rc5m\",\"updated_at\":\"2018-01-03T18:31:49.708-05:00\"},\"Y97ORVZVbd_PGpFSVmZaAg\":{\"token\":\"$2a$10$XlyIrpvmifXYMxYIuiflXOuoW/XOoHBvDAJxOOhjLM3eedGEYp5qK\",\"expiry\":1516232243,\"last_token\":\"$2a$10$dL.HfZhY.P77vjLh/ZJkEelrIysU.mcDWB6/nuCJDaOk3lua1Zfba\",\"updated_at\":\"2018-01-03T18:37:23.873-05:00\"}}"], ["updated_at", "2018-01-05 19:56:44.775011"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-05 15:09:24 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
