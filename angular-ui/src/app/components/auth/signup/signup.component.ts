@@ -1,44 +1,58 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'signup',
-    templateUrl: './signup.component.html'
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.scss']
 })
 export class SignUpComponent implements OnInit {
-    submitted: boolean;
-    signupForm: FormGroup;
+
+    user: FormGroup;
+    signUpErrors:any;
 
     constructor(
         public _authService: AuthService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private router:Router
     ) { }
 
     ngOnInit() {
-        this.submitted = false;
-        this.signupForm = this.formBuilder.group({
-            email: ['', [Validators.required]],
-            password: ['', Validators.required]
-        });
+        this.user = this.formBuilder.group({
+            email: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]],
+            passwordConfirmation: ['', Validators.required]
+        },{
+            validator: this.validatePassword('password', 'passwordConfirmation')
+        })
     }
 
-    submit(value: any) {
-        this.submitted = true;
-        if (!this.signupForm.valid) { return; }
+    validatePassword(password:string, passwordConfirmation:string){
+        return (group:FormGroup) => {
+            let pwInput = group.controls[password];
+            let pwConfirmationInput = group.controls[passwordConfirmation];
 
-        this._authService.signup(value.email, value.password).subscribe(
-            this._authService.redirectAfterLogin.bind(this._authService),
-            this.afterFailedLogin.bind(this));
-    }
-
-    afterFailedLogin(errors: any) {
-        let parsed_errors = JSON.parse(errors._body).errors;
-        for (let attribute in this.signupForm.controls) {
-            if (parsed_errors[attribute]) {
-                this.signupForm.controls[attribute].setErrors(parsed_errors[attribute]);
+            if (pwInput.value !== pwConfirmationInput.value){
+                return pwConfirmationInput.setErrors({ notEqual:true });
+            } else {
+                return pwConfirmationInput.setErrors(null);
             }
         }
-        this.signupForm.setErrors(parsed_errors);
     }
+
+    onSubmit(){
+        this._authService.signup(this.user.get('email').value, this.user.get('password').value).subscribe(
+            res => {
+                this.router.navigate(['/']);
+            },
+            err => {
+                this.signUpErrors = JSON.parse(err._body).errors;
+                console.log(this.signUpErrors);
+            }
+        )
+    }
+
+
 }

@@ -6,7 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Angular2TokenService } from 'angular2-token';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './components/auth/auth.module';
-import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,8 +32,7 @@ import { TrendingService } from './services/trending.service';
     HttpModule,
     FormsModule,
     NgbModule.forRoot(),
-    AuthModule,
-    SharedModule
+    AuthModule
   ],
   providers: [
     RandomService,

@@ -1,1 +1,57 @@
-Signup page
+<div class="jumbotron">
+    <div class="col col-md-8">
+        <h1 class="p-3">Sign-Up</h1>
+
+        <form novalidate (submit)="onSubmit()" [formGroup]="user">
+
+            <div *ngIf="loginErrors">
+                <div class="error p-3">
+                    <div *ngFor="let error of loginErrors">
+                        {{ error }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group px-3">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                <div *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+                    <div class="error">
+                        Email required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group px-3">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <div *ngIf="user.get('password').hasError('required') && user.get('password').touched">
+                    <div class="error">
+                        Password required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group px-3">
+                <label>Password Confirmation</label>
+                <input type="password" class="form-control" placeholder="Password Confirmation" formControlName="passwordConfirmation">
+                <div *ngIf="user.get('passwordConfirmation').hasError('required') && user.get('passwordConfirmation').touched">
+                    <div class="error">
+                        Password confirmation required
+                    </div>
+                </div>
+                <div *ngIf="user.get('passwordConfirmation').hasError('notEqual') && user.get('passwordConfirmation').dirty">
+                    <div class="error">
+                        Passwords do not match
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group px-3">
+                <button class="btn btn-success" [disabled]="user.invalid">Login</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

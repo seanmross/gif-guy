@@ -13,18 +13,6 @@
         </div>
         <!-- Navbar right -->
         <div class="nav">
-            <!-- <div *ngIf="!(_authService.userSignedIn$ | async)">
-                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign in')">Sign in</a>
-            </div>
-            <div *ngIf="!(_authService.userSignedIn$ | async)">
-                <a class="nav-item nav-link nav-custom" (click)="presentAuthDialog('Sign up')">Sign up</a>
-            </div>
-            <div *ngIf="(_authService.userSignedIn$ | async)">
-                <a class="nav-item nav-link nav-custom" [routerLink]="['/profile']"> Profile </a>
-            </div>
-            <div *ngIf="(_authService.userSignedIn$ | async)">
-                <a class="nav-item nav-link nav-custom" (click)="logOut()"> Sign out </a>
-            </div> -->
             <a class="nav-item nav-link nav-custom" routerLink="/login" *ngIf="isLoggedOut()">Sign in</a>
             <a class="nav-item nav-link nav-custom" routerLink="/signup" *ngIf="isLoggedOut()">Sign up</a>
             <a class="nav-item nav-link nav-custom" routerLink="/logout" *ngIf="isLoggedIn()" (click)="logOut()">Sign out</a>
@@ -32,4 +20,3 @@
     </div>
 </nav>
 <br>
-<!-- <app-auth-dialog #authDialog></app-auth-dialog> -->

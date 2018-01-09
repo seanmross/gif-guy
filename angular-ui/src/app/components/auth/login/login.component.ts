@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login',
@@ -8,41 +9,35 @@ import { AuthService } from '../auth.service';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
-    submitted:boolean;
-    loginForm:FormGroup;
+
+    user:FormGroup;
+    loginErrors:any;
 
     constructor(
         private _authService: AuthService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private router: Router
     ){}
 
     ngOnInit(){
-        this.submitted = false;
-        this.loginForm = this.formBuilder.group({
+        this.user = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required]
-        });
+        })
     }
 
-    submit(value: any) {
-        this.submitted = true;
-        if (!this.loginForm.valid) { return; }
-
-        this._authService.login(value.email, value.password).subscribe(
-            this._authService.redirectAfterLogin.bind(this._authService),
-            this.afterFailedLogin.bind(this)
-        );
-    }
-
-    afterFailedLogin(errors: any){
-        //JSON.parse(errors_body).errors;
-        let parsed_errors = JSON.parse(errors._body).errors;
-        for (let attribute in this.loginForm.controls) {
-            if (parsed_errors[attribute]) {
-                this.loginForm.controls[attribute].setErrors(parsed_errors[attribute]);
+    onSubmit(){
+        this._authService.login(this.user.get('email').value, this.user.get('password').value).subscribe(
+            res => {
+                this.router.navigate(['/']);
+            },
+            err => {
+                this.loginErrors = JSON.parse(err._body).errors;
+                console.log(this.loginErrors);
             }
-        }
-        this.loginForm.setErrors(parsed_errors);
+        )
     }
+
+
 }
 

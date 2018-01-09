@@ -37,10 +37,5 @@ export class AuthService {
     isLoggedIn():boolean{
         return this._tokenService.userSignedIn();
     }
-    
-    redirectAfterLogin():void{
-        let redirectTo = this.redirectUrl ? this.redirectUrl: '/';
-        this.redirectUrl = undefined;
-        this.router.navigate([redirectTo]);
-    }
+
 }

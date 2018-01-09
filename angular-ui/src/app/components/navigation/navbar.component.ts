@@ -1,9 +1,5 @@
-// import { Component, OnInit, ViewChild } from '@angular/core';
-// import { AuthDialogComponent } from "../auth-dialog/auth-dialog.component";
-// import { AuthService } from "./../../services/auth.service";
-// import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../authentication/authentication.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     selector: 'app-navbar',
@@ -12,30 +8,18 @@ import { AuthenticationService } from '../authentication/authentication.service'
 })
 export class NavbarComponent {
 
-    // @ViewChild('authDialog') authDialog: AuthDialogComponent;
-
     constructor(
-        // public _authService: AuthService,
-        // private router: Router
-        private _authenticationService: AuthenticationService
+        private _authService: AuthService
     ) {}
 
-    // logOut() {
-    //     this._authService.logOutUser().subscribe(() => this.router.navigate(['/']));
-    // }
-
-    // presentAuthDialog(mode?: 'Sign in' | 'Sign up') {
-    //     this.authDialog.openDialog(mode);
-    // }
-
     isLoggedIn(): boolean {
-        return this._authenticationService.isLoggedIn();
+        return this._authService.isLoggedIn();
     }
     isLoggedOut(): boolean {
-        return !this._authenticationService.isLoggedIn();
+        return !this._authService.isLoggedIn();
     }
     logOut(): void {
-        this._authenticationService.logout();
+        this._authService.logout();
     }
 
 }
