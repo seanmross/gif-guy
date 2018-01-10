@@ -17,7 +17,7 @@ import { GifByIdService } from '../../services/gif-by-id.service';
 export class HomeComponent implements OnInit {
   public randomGif:RandomGif;
   public currentDay:string;
-  public trendingGifs$:Observable<Gif[]>;
+  public trendingGifs:Gif[];
   public date = new Date();
   public validToken:boolean;
   public gif:Gif;
@@ -64,7 +64,20 @@ export class HomeComponent implements OnInit {
   }
 
   getTrendingGifs(){
-    this.trendingGifs$ = this._trendingService.getTrending();
+    //this.trendingGifs$ = this._trendingService.getTrending();
+    this._trendingService.getTrending().subscribe(
+      res => {
+        this.trendingGifs = res;
+        this.trendingGifs.forEach( gif => {
+          if (gif.title.includes(' ')) {
+            gif.title = gif.title.replace(/ /g, '-');
+          }
+        })
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
   // Login logic

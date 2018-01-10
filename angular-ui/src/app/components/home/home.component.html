@@ -84,9 +84,11 @@
       <div class="align">
         <br>
         <div class="row">
-          <div *ngFor="let gif of trendingGifs$ | async">
+          <div *ngFor="let trendingGif of trendingGifs">
             <div class="col col-lg-3">
-              <img class="trending-gif" src="{{ gif.images.fixed_width.url }}" alt="">
+              <a [routerLink]="['/gifs', trendingGif.id]" [queryParams]="{ title: trendingGif.title }" >
+                <img class="trending-gif" src="{{ trendingGif.images.fixed_width.url }}" alt="">
+              </a>
             </div>
           </div>
         </div>
@@ -95,4 +97,3 @@
   </div>
 </div>
 
-<!-- <app-auth-dialog #authDialog></app-auth-dialog> -->
