@@ -7,6 +7,7 @@ import { environment } from '../../../environments/environment';
 import { TrendingService } from '../../services/trending.service';
 import { Gif } from '../../models/gif.interface';
 import { AuthService } from '../auth/auth.service';
+import { GifByIdService } from '../../services/gif-by-id.service';
 
 @Component({
   selector: 'app-home',
@@ -14,17 +15,20 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public gif:RandomGif;
+  public randomGif:RandomGif;
   public currentDay:string;
   public trendingGifs$:Observable<Gif[]>;
   public date = new Date();
   public validToken:boolean;
+  public gifId:string;
+  public gif:Gif;
   
   constructor( 
     public _randomService: RandomService,
     public _tokenAuthService: Angular2TokenService,
     public _trendingService: TrendingService,
-    private _authService:AuthService
+    private _authService:AuthService,
+    public _gifByIdService:GifByIdService
   ){}
 
   ngOnInit(){
@@ -34,7 +38,6 @@ export class HomeComponent implements OnInit {
   }
 
   getCurrentDay(){
-    
     let currentDayIndex:number = this.date.getDay();
     const days: string[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     this.currentDay = days[currentDayIndex];
@@ -44,7 +47,14 @@ export class HomeComponent implements OnInit {
   getRandomGif(){
     this._randomService.getRandomGif(this.getCurrentDay()).subscribe(
       res => {
-        this.gif = res;
+        this.randomGif = res;
+        this.gifId = this.randomGif.id;
+        this._gifByIdService.getGifById(this.gifId).subscribe(
+          res => {
+            this.gif = res;
+            console.log(this.gif.title);
+          }
+        )
       })
   }
 
@@ -52,7 +62,7 @@ export class HomeComponent implements OnInit {
     this.trendingGifs$ = this._trendingService.getTrending();
   }
 
-  //new login logic
+  // Login logic
   isLoggedIn(): boolean {
     return this._authService.isLoggedIn();
   }
@@ -63,6 +73,7 @@ export class HomeComponent implements OnInit {
     this._authService.logout();
   }
 
+  // Must validate token to access currentUserData api 
   validateToken() {
     this._tokenAuthService.validateToken().subscribe(
       res => {

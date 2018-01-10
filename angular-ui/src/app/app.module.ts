@@ -12,10 +12,12 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { NavbarComponent } from './components/navigation/navbar.component';
+import { GifDetailsComponent } from './components/gif-details/gif-details.component';
 
 import { RandomService } from './services/random.service';
 import { SearchService } from './components/search/search.service';
 import { TrendingService } from './services/trending.service';
+import { GifByIdService } from './services/gif-by-id.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { TrendingService } from './services/trending.service';
     HomeComponent,
     SearchComponent,
     FavoritesComponent,
-    NavbarComponent
+    NavbarComponent,
+    GifDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { TrendingService } from './services/trending.service';
     RandomService,
     SearchService,
     Angular2TokenService,
-    TrendingService
+    TrendingService,
+    GifByIdService
   ],
   bootstrap: [AppComponent]
 })

@@ -16256,3 +16256,70 @@ Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
 Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 12:20:31 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 29ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 12:21:43 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 12:26:28 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 12:38:29 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 12:57:30 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:00:05 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:00:26 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:02:53 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:05:33 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:06:06 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2018-01-10 13:06:16 -0500
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  Parameters: {"token_validation"=>{}}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+

@@ -65,9 +65,11 @@
       </h2>
       <div class="align">
         <br>
-        <div *ngIf="gif">
+        <div *ngIf="randomGif">
           <div></div>
-          <img class="max-width gif" src="{{ gif.image_original_url }}" alt="">
+         
+            <img class="max-width gif" src="{{ randomGif.image_original_url }}" alt="">
+          
         </div>
       </div>
     </div>

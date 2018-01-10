@@ -3,6 +3,7 @@
 
 export interface RandomGif {
     image_original_url: string;
+    id:string;
 }
 
 export interface Gif {
@@ -11,4 +12,5 @@ export interface Gif {
             url:string
         }
     };
+    title:string;
 }
