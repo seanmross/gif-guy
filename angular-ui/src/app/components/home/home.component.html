@@ -67,9 +67,9 @@
         <br>
         <div *ngIf="randomGif">
           <div></div>
-         
-            <img class="max-width gif" src="{{ randomGif.image_original_url }}" alt="">
-          
+            <a [routerLink]="['/gifs', id]" [queryParams]="{ title: title }" >
+              <img class="max-width gif" src="{{ randomGif.image_original_url }}" alt="">
+            </a>          
         </div>
       </div>
     </div>

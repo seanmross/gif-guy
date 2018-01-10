@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
   public trendingGifs$:Observable<Gif[]>;
   public date = new Date();
   public validToken:boolean;
-  public gifId:string;
   public gif:Gif;
+  public title:string;
+  public id:string;
   
   constructor( 
     public _randomService: RandomService,
@@ -48,11 +49,15 @@ export class HomeComponent implements OnInit {
     this._randomService.getRandomGif(this.getCurrentDay()).subscribe(
       res => {
         this.randomGif = res;
-        this.gifId = this.randomGif.id;
-        this._gifByIdService.getGifById(this.gifId).subscribe(
+        this.id = this.randomGif.id;
+        this._gifByIdService.getGifById(this.id).subscribe(
           res => {
             this.gif = res;
-            console.log(this.gif.title);
+            this.title = this.gif.title;
+            this.id = this.randomGif.id;
+            if (this.title.includes(' ')) {
+              this.title = this.title.replace(/ /g, '-');
+            }
           }
         )
       })

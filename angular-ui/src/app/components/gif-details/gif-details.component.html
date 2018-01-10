@@ -1,1 +1,26 @@
-Gif Details
+
+<div class="row">
+    <div class="col col-lg-12">
+        <div class="jumbotron dark">
+            <h2 class="tile-header px-3">{{ title }}</h2>
+            <div class="align">
+                <br>
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <div *ngIf="gif">
+                            <img class="max-width gif" src="{{ gif.images.original.url }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <button class="btn btn-info align-left">
+                            favorite
+                        </button>
+                        <button class="btn btn-info align-left">
+                            copy link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

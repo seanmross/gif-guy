@@ -26,7 +26,7 @@ const routes: Routes = [
         component: FavoritesComponent,
     },
     {
-        path: 'gifs/:title',
+        path: 'gifs/:id',
         component: GifDetailsComponent
     }
 ]
