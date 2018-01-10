@@ -1,5 +1,6 @@
 img.giphy-logo {
     width: 232px;
+    padding-bottom: 17.61px;
 }
 p {
     color: white;
@@ -61,4 +62,9 @@ hr {
     margin-left: 18px;
     margin-bottom: 25px;
     border-radius: 0.25rem;
+}
+
+.tile-header {
+    color: #20c997 !important;
+    font-weight: bolder;
 }

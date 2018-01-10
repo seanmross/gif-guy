@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   public gif:RandomGif;
   public currentDay:string;
   public trendingGifs$:Observable<Gif[]>;
+  public date = new Date();
+  public validToken:boolean;
   
   constructor( 
     public _randomService: RandomService,
@@ -28,12 +30,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(){
     this.getRandomGif();
     this.getTrendingGifs();
+    this.validateToken();
   }
 
   getCurrentDay(){
-    let date = new Date();
-    let currentDayIndex:number = date.getDay();
-    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    let currentDayIndex:number = this.date.getDay();
+    const days: string[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     this.currentDay = days[currentDayIndex];
     return this.currentDay;
   }
@@ -58,6 +61,17 @@ export class HomeComponent implements OnInit {
   }
   logOut(): void {
     this._authService.logout();
+  }
+
+  validateToken() {
+    this._tokenAuthService.validateToken().subscribe(
+      res => {
+        this.validToken = true;
+      },
+      err => {
+        this.validToken = false;
+      }
+    )
   }
 
 }

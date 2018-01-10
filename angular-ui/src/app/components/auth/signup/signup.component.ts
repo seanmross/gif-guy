@@ -25,11 +25,11 @@ export class SignUpComponent implements OnInit {
             password: ['', [Validators.required, Validators.minLength(6)]],
             passwordConfirmation: ['', Validators.required]
         },{
-            validator: this.validatePassword('password', 'passwordConfirmation')
+            validator: this.confirmPassword('password', 'passwordConfirmation')
         })
     }
 
-    validatePassword(password:string, passwordConfirmation:string){
+    confirmPassword(password:string, passwordConfirmation:string){
         return (group:FormGroup) => {
             let pwInput = group.controls[password];
             let pwConfirmationInput = group.controls[passwordConfirmation];
@@ -45,6 +45,7 @@ export class SignUpComponent implements OnInit {
     onSubmit(){
         this._authService.signup(this.user.get('email').value, this.user.get('password').value).subscribe(
             res => {
+                console.log(this._authService.isLoggedIn());
                 this.router.navigate(['/']);
             },
             err => {
