@@ -8,10 +8,10 @@
                 <div class="align-center">
                     <br>
                     <div class="row">
-                        <div *ngFor="let trendingGif of trendingGifs">
-                            <div class="col col-lg-3">
-                                <a [routerLink]="['/gifs', trendingGif.id]" [queryParams]="{ title: trendingGif.title }">
-                                    <img class="trending-gif" src="{{ trendingGif.images.fixed_width.url }}" alt="">
+                        <div *ngFor="let favorite of favoriteGifs">
+                            <div class="col-lg-3">
+                                <a [routerLink]="['/gifs', favorite.id]" [queryParams]="{ title: favorite.title }">
+                                    <img src="{{ favorite.images.fixed_width.url }}" class="favorite-gif" alt="">
                                 </a>
                             </div>
                         </div>
