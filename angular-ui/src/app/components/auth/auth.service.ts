@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Response } from '@angular/http';
-import { Angular2TokenService } from 'angular2-token';
+import { Angular2TokenService, UserData } from 'angular2-token';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -36,6 +36,14 @@ export class AuthService {
 
     isLoggedIn():boolean{
         return this._tokenService.userSignedIn();
+    }
+
+    validateToken():Observable<Response>{
+        return this._tokenService.validateToken();
+    }
+
+    getCurrentUserData():UserData{
+        return this._tokenService.currentUserData;
     }
 
 }

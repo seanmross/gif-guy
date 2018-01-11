@@ -45,11 +45,11 @@
       </div>
 
       <!-- User signed in (can only access .currentUserData if token is first validated)-->
-      <div *ngIf="isLoggedIn() && validToken">
+      <div *ngIf="isLoggedIn() && authToken">
         <!-- Austin Powers Welcome -->
         <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.webp" width="380" height="227.47" alt="">
         <br><br><br>
-          <p class="lead">Welcome, {{ _tokenAuthService.currentUserData.email }}!</p> 
+          <p class="lead">Welcome, {{ getCurrentUserEmail() }}!</p> 
       </div>
 
     </div>

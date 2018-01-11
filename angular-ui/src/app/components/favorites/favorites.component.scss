@@ -1,0 +1,37 @@
+p {
+    color: white;
+}
+.dark {
+    background-color: #343a40;
+}
+.align-center {
+    text-align: center;
+}
+.max-width {
+    max-width: 650px;
+    max-height: 525px;
+}
+.gif {
+    border-radius: 0.25rem;
+}
+.btn-custom:hover {
+    cursor: pointer !important;
+}
+.jumbotron {
+    margin-bottom: 0;
+}
+.trending-gif {
+    margin-right: 20px;
+    margin-left: 18px;
+    margin-bottom: 25px;
+    border-radius: 0.25rem;
+}
+.tile-header {
+    color: #20c997 !important;
+    font-weight: bolder;
+}
+.error {
+    margin-top: .25rem;
+    font-size: 90%;
+    color: #dc3545;
+}

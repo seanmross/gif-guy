@@ -1,1 +1,31 @@
-<h1>FAVORITES</h1>
+<!-- Favorites tile -->
+<div class="row">
+    <div class="col col-lg-12">
+        <div class="jumbotron dark">
+            <h2 class="tile-header px-3">favorites</h2>
+
+            <div *ngIf="isLoggedIn() && authToken">
+                <div class="align-center">
+                    <br>
+                    <div class="row">
+                        <div *ngFor="let trendingGif of trendingGifs">
+                            <div class="col col-lg-3">
+                                <a [routerLink]="['/gifs', trendingGif.id]" [queryParams]="{ title: trendingGif.title }">
+                                    <img class="trending-gif" src="{{ trendingGif.images.fixed_width.url }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isLoggedOut()">
+                <div class="error">
+                    You must be logged in to view favorites.
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { RandomService } from './../../services/random.service';
 import { Observable } from 'rxjs/Rx';
 import { RandomGif } from '../../models/gif.interface';
-import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../../../environments/environment';
 import { TrendingService } from '../../services/trending.service';
 import { Gif } from '../../models/gif.interface';
@@ -15,21 +14,20 @@ import { GifByIdService } from '../../services/gif-by-id.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public randomGif:RandomGif;
-  public currentDay:string;
-  public trendingGifs:Gif[];
-  public date = new Date();
-  public validToken:boolean;
-  public gif:Gif;
-  public title:string;
-  public id:string;
+  randomGif:RandomGif;
+  currentDay:string;
+  trendingGifs:Gif[];
+  date = new Date();
+  authToken:boolean;
+  gif:Gif;
+  title:string;
+  id:string;
   
   constructor( 
-    public _randomService: RandomService,
-    public _tokenAuthService: Angular2TokenService,
-    public _trendingService: TrendingService,
+    private _randomService: RandomService,
+    private _trendingService: TrendingService,
     private _authService:AuthService,
-    public _gifByIdService:GifByIdService
+    private _gifByIdService:GifByIdService
   ){}
 
   ngOnInit(){
@@ -64,7 +62,6 @@ export class HomeComponent implements OnInit {
   }
 
   getTrendingGifs(){
-    //this.trendingGifs$ = this._trendingService.getTrending();
     this._trendingService.getTrending().subscribe(
       res => {
         this.trendingGifs = res;
@@ -87,20 +84,22 @@ export class HomeComponent implements OnInit {
   isLoggedOut(): boolean {
     return !this._authService.isLoggedIn();
   }
-  logOut(): void {
-    this._authService.logout();
-  }
 
-  // Must validate token to access currentUserData api 
-  validateToken() {
-    this._tokenAuthService.validateToken().subscribe(
+  // Token validation logic
+  validateToken():void{
+    this._authService.validateToken().subscribe(
       res => {
-        this.validToken = true;
+        this.authToken = true;
       },
       err => {
-        this.validToken = false;
+        this.authToken = false;
       }
     );
+  }
+  
+  // Get current user email
+  getCurrentUserEmail():string{
+    return this._authService.getCurrentUserData().email;
   }
 
 }

@@ -46,8 +46,8 @@ export class GifDetailsComponent implements OnInit{
         );
     }
     
+    // Call favorites service
     onFavorite(){
-        //import favorites service
         this._favorites.saveToFavorites({"giphy_id": this.id}).subscribe(
             res => {
                 if (res.status == 200){
