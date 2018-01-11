@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
          #:confirmable,
          :omniauthable
 
+  has_many :favorites
+
   include DeviseTokenAuth::Concerns::User
 end

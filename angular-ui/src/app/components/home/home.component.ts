@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
             }
           }
         )
-      })
+      });
   }
 
   getTrendingGifs(){
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
   }
 
   // Login logic
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit {
       err => {
         this.validToken = false;
       }
-    )
+    );
   }
 
 }

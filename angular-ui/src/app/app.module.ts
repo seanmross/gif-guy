@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Angular2TokenService } from 'angular2-token';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './components/auth/auth.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,6 +20,7 @@ import { RandomService } from './services/random.service';
 import { SearchService } from './components/search/search.service';
 import { TrendingService } from './services/trending.service';
 import { GifByIdService } from './services/gif-by-id.service';
+import { FavoritesService } from './components/favorites/favorites.service';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,17 @@ import { GifByIdService } from './services/gif-by-id.service';
     HttpModule,
     FormsModule,
     NgbModule.forRoot(),
-    AuthModule
+    AuthModule,
+    HttpClientModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [
     RandomService,
     SearchService,
     Angular2TokenService,
     TrendingService,
-    GifByIdService
+    GifByIdService,
+    FavoritesService
   ],
   bootstrap: [AppComponent]
 })

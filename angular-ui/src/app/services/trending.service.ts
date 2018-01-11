@@ -13,6 +13,6 @@ export class TrendingService{
     getTrending():Observable<Gif[]>{
         this.trendingEndpoint = 'https://api.giphy.com/v1/gifs/trending?&limit=16&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD';
         return this._http.get(this.trendingEndpoint).map(
-            (res:Response) => res.json().data)
+            (res:Response) => res.json().data);
     }
 }
