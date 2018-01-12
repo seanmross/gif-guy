@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-    redirectUrl:string;
     
     constructor(
         private _tokenService:Angular2TokenService,
@@ -29,7 +28,6 @@ export class AuthService {
     }
 
     logout():void{
-        this.redirectUrl = undefined;
         this._tokenService.signOut();
         this.router.navigate(['/']);
     }

@@ -48,7 +48,7 @@ export class SignUpComponent implements OnInit {
                 this.router.navigate(['/']);
             },
             err => {
-                this.signUpErrors = JSON.parse(err._body).errors;
+                this.signUpErrors = JSON.parse(err._body).errors.full_messages;
                 console.log(this.signUpErrors);
             }
         )

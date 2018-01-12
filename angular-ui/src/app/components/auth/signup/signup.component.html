@@ -4,11 +4,9 @@
 
         <form novalidate (submit)="onSubmit()" [formGroup]="user">
 
-            <div *ngIf="loginErrors">
+            <div *ngIf="signUpErrors">
                 <div class="error p-3">
-                    <div *ngFor="let error of loginErrors">
-                        {{ error }}
-                    </div>
+                    {{ signUpErrors }}
                 </div>
             </div>
 

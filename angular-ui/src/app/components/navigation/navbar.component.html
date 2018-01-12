@@ -15,7 +15,7 @@
         <div class="nav">
             <a class="nav-item nav-link nav-custom" routerLink="/login" *ngIf="isLoggedOut()">Sign in</a>
             <a class="nav-item nav-link nav-custom" routerLink="/signup" *ngIf="isLoggedOut()">Sign up</a>
-            <a class="nav-item nav-link nav-custom" routerLink="/logout" *ngIf="isLoggedIn()" (click)="logOut()">Sign out</a>
+            <a class="nav-item nav-link nav-custom" *ngIf="isLoggedIn()" (click)="logOut()">Sign out</a>
         </div>
     </div>
 </nav>

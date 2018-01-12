@@ -3,11 +3,13 @@ class Api::FavoritesController < ApplicationController
 
     def create
         giphy_id = params[:giphy_id]
-        @favorite = current_user.favorites.build(giphy_id: giphy_id)
-        if @favorite.save
-            head(:ok)
-        else
+
+        if Favorite.exists?(user_id: current_user.id, giphy_id: giphy_id)
             head(:unprocessable_entity)
+        else
+            favorite = current_user.favorites.build(giphy_id: giphy_id)
+            favorite.save
+            head(:ok)
         end
     end
 
