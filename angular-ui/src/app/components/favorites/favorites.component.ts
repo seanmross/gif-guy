@@ -5,6 +5,7 @@ import { FavoritesService } from './favorites.service';
 import { GifByIdService } from '../../services/gif-by-id.service';
 import { Gif } from '../../models/gif.interface';
 import { Favorite } from './favorite.interface';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
     selector: 'favorites',
@@ -15,12 +16,14 @@ export class FavoritesComponent {
     authToken:boolean;
     favorites:Favorite[];
     favoriteGifs:Gif[] = [];
+    loginErrors:any;
 
     constructor(
         private _tokenService:Angular2TokenService,
         private _authService:AuthService,
         private _favorites:FavoritesService,
-        private _gifById:GifByIdService
+        private _gifById:GifByIdService,
+        private _flashMessages:FlashMessagesService
     ){
         this.validateToken();
         this.getFavorites();
@@ -51,14 +54,24 @@ export class FavoritesComponent {
                 this.favorites.forEach(favorite => {
                     this._gifById.getGifById(favorite.giphy_id).subscribe(res => {
                         this.favoriteGifs.push(res);
-                    })
+                    });
                 });
+                this.flashNoFavorites(this.favorites);
             },
             err => {
-                console.log(err);
+                this.loginErrors = JSON.parse(err._body).errors;
+                if (this.loginErrors == "You need to sign in or sign up before continuing."){
+                    this._flashMessages.show("You must be logged in to view favorites.", { cssClass: 'alert-danger', timeout: 5000 });
+                }
             }
         )
     }
     
+    // Callbaack function if user is loggin in, but has no favorites
+    flashNoFavorites(arr){
+        if (arr.length == 0) {
+            this._flashMessages.show("You don't have any favorites yet.", { cssClass: 'alert-danger', timeout: 5000 });
+        }
+    }
 
 }

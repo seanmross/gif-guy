@@ -4,6 +4,10 @@
         <div class="jumbotron dark">
             <h2 class="tile-header px-3">favorites</h2>
 
+            <div *ngIf="isLoggedIn() && favoriteGifs.length == 0">
+                <flash-messages></flash-messages>
+            </div>
+
             <div *ngIf="isLoggedIn() && authToken">
                 <div class="align-center">
                     <br>
@@ -20,11 +24,8 @@
             </div>
 
             <div *ngIf="isLoggedOut()">
-                <div class="error">
-                    You must be logged in to view favorites.
-                </div>
+                <flash-messages></flash-messages>
             </div>
-            
 
         </div>
     </div>

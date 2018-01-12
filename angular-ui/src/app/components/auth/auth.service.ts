@@ -27,9 +27,8 @@ export class AuthService {
         });
     }
 
-    logout():void{
-        this._tokenService.signOut();
-        this.router.navigate(['/']);
+    logout():Observable<Response>{
+        return this._tokenService.signOut();
     }
 
     isLoggedIn():boolean{
