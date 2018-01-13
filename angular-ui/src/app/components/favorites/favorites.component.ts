@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { AuthService } from '../auth/auth.service';
 import { FavoritesService } from './favorites.service';
@@ -12,11 +12,14 @@ import { FlashMessagesService } from 'angular2-flash-messages';
     templateUrl: './favorites.component.html',
     styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent {
+export class FavoritesComponent implements OnDestroy {
     authToken:boolean;
     favorites:Favorite[];
     favoriteGifs:Gif[] = [];
     loginErrors:any;
+
+    validateTokenSub;
+    favoritesSub;
 
     constructor(
         private _tokenService:Angular2TokenService,
@@ -37,7 +40,7 @@ export class FavoritesComponent {
     }
     // Token validation logic - must validate token to access currentUserData property
     validateToken(): void {
-        this._authService.validateToken().subscribe(
+        this.validateTokenSub = this._authService.validateToken().subscribe(
             res => {
                 this.authToken = true;
             },
@@ -48,7 +51,7 @@ export class FavoritesComponent {
     }
 
     getFavorites(){
-        this._favorites.getFavorites().map(res => res.json()).subscribe(
+        this.favoritesSub = this._favorites.getFavorites().map(res => res.json()).subscribe(
             res => {
                 this.favorites = res;
                 this.favorites.forEach(favorite => {
@@ -61,17 +64,21 @@ export class FavoritesComponent {
             err => {
                 this.loginErrors = JSON.parse(err._body).errors;
                 if (this.loginErrors == "You need to sign in or sign up before continuing."){
-                    this._flashMessages.show("You must be logged in to view favorites.", { cssClass: 'alert-danger', timeout: 5000 });
+                    this._flashMessages.show("You must be logged in to view favorites.", { cssClass: 'alert-danger', timeout: 3000 });
                 }
             }
         )
     }
     
-    // Callbaack function if user is loggin in, but has no favorites
+    // Callback function if user is loggin in, but has no favorites
     flashNoFavorites(arr){
         if (arr.length == 0) {
-            this._flashMessages.show("You don't have any favorites yet.", { cssClass: 'alert-danger', timeout: 5000 });
+            this._flashMessages.show("You don't have any favorites yet.", { cssClass: 'alert-danger', timeout: 3000 });
         }
+    }
+
+    ngOnDestroy(){
+
     }
 
 }

@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './components/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { ClipboardModule } from 'ngx-clipboard';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,6 +18,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { NavbarComponent } from './components/navigation/navbar.component';
 import { GifDetailsComponent } from './components/gif-details/gif-details.component';
+import { CopyLinkDialogComponent } from './components/gif-details/dialog/copy-link-dialog.component';
 
 import { RandomService } from './services/random.service';
 import { SearchService } from './components/search/search.service';
@@ -29,7 +33,8 @@ import { FavoritesService } from './components/favorites/favorites.service';
     SearchComponent,
     FavoritesComponent,
     NavbarComponent,
-    GifDetailsComponent
+    GifDetailsComponent,
+    CopyLinkDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,10 @@ import { FavoritesService } from './components/favorites/favorites.service';
     NgbModule.forRoot(),
     AuthModule,
     HttpClientModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    ClipboardModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     RandomService,
@@ -50,6 +58,7 @@ import { FavoritesService } from './components/favorites/favorites.service';
     GifByIdService,
     FavoritesService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CopyLinkDialogComponent]
 })
 export class AppModule { }

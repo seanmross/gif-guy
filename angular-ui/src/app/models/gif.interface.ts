@@ -13,4 +13,7 @@ export interface Gif {
         }
     };
     title:string;
+    url:string;
+    bitly_url:string;
+    embed_url:string;
 }

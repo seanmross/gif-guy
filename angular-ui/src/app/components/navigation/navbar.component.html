@@ -6,15 +6,15 @@
         <!-- Navbar left -->
         <div class="collapse navbar-collapse">
             <div class="nav">
-                <a class="nav-item nav-link nav-custom" routerLink="/" routerLinkActive="active">Home</a>
-                <a class="nav-item nav-link nav-custom" routerLink="/search" routerLinkActive="active">Search</a>
-                <a class="nav-item nav-link nav-custom" routerLink="/favorites" routerLinkActive="active">Favorites</a>
+                <a class="nav-item nav-link nav-custom" [routerLink]="['/']">Home</a>
+                <a class="nav-item nav-link nav-custom" [routerLink]="['/search']">Search</a>
+                <a class="nav-item nav-link nav-custom" [routerLink]="['/favorites']">Favorites</a>
             </div>
         </div>
         <!-- Navbar right -->
         <div class="nav">
-            <a class="nav-item nav-link nav-custom" routerLink="/login" *ngIf="isLoggedOut()">Sign in</a>
-            <a class="nav-item nav-link nav-custom" routerLink="/signup" *ngIf="isLoggedOut()">Sign up</a>
+            <a class="nav-item nav-link nav-custom" [routerLink]="['/login']" *ngIf="isLoggedOut()">Sign in</a>
+            <a class="nav-item nav-link nav-custom" [routerLink]="['/signup']" *ngIf="isLoggedOut()">Sign up</a>
             <a class="nav-item nav-link nav-custom" *ngIf="isLoggedIn()" (click)="logOut()">Sign out</a>
         </div>
     </div>

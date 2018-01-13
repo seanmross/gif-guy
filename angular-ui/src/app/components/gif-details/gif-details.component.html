@@ -3,7 +3,9 @@
     <div class="col col-lg-12">
         <div class="jumbotron dark">
             <h2 class="tile-header px-3">{{ title }}</h2>
-            <flash-messages></flash-messages>
+            
+                <flash-messages></flash-messages>
+            
             <div class="align">
                 <br>
                 <div class="row">
@@ -13,19 +15,14 @@
                         </div>
                     </div>
                     <div class="col col-lg-6">
-                        <div>
-                            <button class="btn btn-info align-left" (click)="onFavorite()">
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                favorite
-                            </button>
-                        </div>
-                        
-                        <div>
-                            <button class="btn btn-info align-left">
-                                <i class="fa fa-clipboard" aria-hidden="true"></i>
-                                copy link
-                            </button>
-                        </div>
+                        <button class="btn btn-info align-left" (click)="onFavorite()">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            favorite
+                        </button>
+                        <button [disabled]="!gif" class="btn btn-info align-left" (click)="openDialog()">
+                            <i class="fa fa-clipboard" aria-hidden="true"></i>
+                            copy link
+                        </button>
                     </div>
                 </div>
             </div>

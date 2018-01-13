@@ -1,0 +1,25 @@
+
+
+<h2 mat-dialog-title>Links to GIF</h2>
+<flash-messages></flash-messages>
+<mat-dialog-content>
+    <div>
+        <label>Giphy link</label>
+        <button mat-raised-button [ngxClipboard]="giphyLink" (click)="copyGiphyLink()">Copy</button>
+        <input class="link" type="text" value="{{ data.url }}" #giphyLink>
+    </div>
+    <div>
+        <label>Short link</label>
+        <button mat-raised-button [ngxClipboard]="shortLink" (click)="copyShortLink()">Copy</button>
+        <input class="link" type="text" value="{{ data.bitly_url }}" #shortLink>
+    </div>
+    <div>
+        <label>Embed link</label>
+        <button mat-raised-button [ngxClipboard]="embedLink" (click)="copyEmbedLink()">Copy</button>
+        <input class="link" type="text" value="{{ data.embed_url }}" #embedLink>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onClose()">Close</button>
+</mat-dialog-actions>
