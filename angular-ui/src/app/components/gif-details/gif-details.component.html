@@ -3,9 +3,18 @@
     <div class="col col-lg-12">
         <div class="jumbotron dark">
             <h2 class="tile-header px-3">{{ title }}</h2>
-            
-                <flash-messages></flash-messages>
-            
+                
+            <div *ngIf="flashSuccess">
+                <div class="alert alert-success">
+                    {{ flashSuccessRes }}
+                </div>
+            </div>
+            <div *ngIf="flashFailure">
+                <div class="alert alert-danger">
+                    {{ flashFailureRes }}
+                </div>
+            </div>
+
             <div class="align">
                 <br>
                 <div class="row">

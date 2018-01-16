@@ -5,7 +5,8 @@ class Api::FavoritesController < ApplicationController
         giphy_id = params[:giphy_id]
 
         if Favorite.exists?(user_id: current_user.id, giphy_id: giphy_id)
-            head(:unprocessable_entity)
+            @error = 'Already saved to favorites'
+            render json: @error, status: :internal_server_error
         else
             favorite = current_user.favorites.build(giphy_id: giphy_id)
             favorite.save
