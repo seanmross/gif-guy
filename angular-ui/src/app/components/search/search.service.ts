@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { environment } from '../../../environments/environment';
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ export class SearchService {
         if (searchStr.includes(' ')) {
             searchStr = searchStr.replace(/ /g, '+');
         }
-        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&offset=${page}&limit=${perPage}&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
+        this.searchUrl = `http://api.giphy.com/v1/gifs/search?q=${searchStr}&offset=${page}&limit=${perPage}&api_key=${environment.api_key}`;
         return this.http
                 .get(this.searchUrl)
                 .map((response: Response) => response.json());

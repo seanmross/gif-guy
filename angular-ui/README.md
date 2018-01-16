@@ -1,27 +1,25 @@
 # Gifhub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+Gifhub is a simple, personalized app to help manage, integrate, and discover your favorite GIFs. This app utlizes microservices architecture - featuring an Angular2 client-facing UI and a Ruby on Rails backend.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
++ User authentication
+    + Devise Token Auth: token based authentication system for Rails
+    + Angular2-Token: token based authentication system for Angular
++ Powered by [GIPHYDevelopers](https://developers.giphy.com/docs/) API and GIPHY's GIF library
+    + Search endpoint - search all GIFs for a word/phrase
+    + Trending endpoint - searches currently trending GIFs online
+    + Random endpoint - used to 
++ Pagination - users can view search results in a paginated fashion
++ Advanced pagination - users can select a per-page amount of GIFs
++ User favorites - users can add GIFs to their list of favorites
++ Links - users can copy media links, GIF page links, and embedded links to clipboard
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
++ npm -v 5.5.1
++ [Angular CLI](https://github.com/angular/angular-cli) -v 1.5.5
++ Ruby -v 2.4.0
++ Rails -v 5.1.4
++ PostgreSQL

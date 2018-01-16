@@ -7,5 +7,7 @@ export const environment = {
   production: false,
   token_auth_config: {
     apiBase: 'http://localhost:3000'
-  }
+  },
+  api_key: 'ues5dDLwsBAE8fH8tnzqyBzec472JcJD'
+
 };

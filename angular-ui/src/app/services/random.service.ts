@@ -4,6 +4,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { RandomGif } from './../models/gif.interface';
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
 // Define service
 @Injectable()
@@ -13,7 +14,7 @@ export class RandomService {
     constructor(private _http:Http){}
     
     getRandomGif(day:string):Observable<RandomGif> {
-        this.randomGifUrl = `http://api.giphy.com/v1/gifs/random?tag=${day}&api_key=ues5dDLwsBAE8fH8tnzqyBzec472JcJD`;
+        this.randomGifUrl = `http://api.giphy.com/v1/gifs/random?tag=${day}&api_key=${environment.api_key}`;
     
         return this._http
                 .get(this.randomGifUrl)
